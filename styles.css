@@ -51,6 +51,8 @@ p {
     color: #555;
 }
 
+text -center :{ color: green  }   
+
 @media (max-width: 640px) {
     p {
         width: 90%;
