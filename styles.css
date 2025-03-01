@@ -1,65 +1,135 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-image: url('https://img.freepik.com/foto-gratis/luces-brillantes-sobre-fondo-azul-oscuro_23-2147798922.jpg?t=st=1735503210~exp=1735506810~hmac=70c4fa65d40c8506a6b457a668bdb2ed2111e0f6dafb877cf2c192bd2a81efaa&w=740');
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agusunx</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="nav-item">
+                    <img src="path/to/image1.jpg" alt="Culpa Mia" class="img-thumbnail">
+                    <a class="nav-link" href="#" onclick="showContent('culpa-mia')">Culpa Mia</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="nav-item">
+                    <img src="path/to/image2.jpg" alt="El Extraño Mundo De Jack" class="img-thumbnail">
+                    <a class="nav-link" href="#" onclick="showContent('extrano-mundo-de-jack')">El Extraño Mundo De Jack</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="nav-item">
+                    <img src="path/to/image3.jpg" alt="Shrek" class="img-thumbnail">
+                    <a class="nav-link" href="#" onclick="showContent('shrek')">Shrek</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="nav-item">
+                    <img src="path/to/image4.jpg" alt="TN EN VIVO" class="img-thumbnail">
+                    <a class="nav-link" href="#" onclick="showContent('tn-en-vivo')">TN EN VIVO</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="nav-item">
+                    <img src="path/to/image5.jpg" alt="Mortal Kombat Legends" class="img-thumbnail">
+                    <a class="nav-link" href="#" onclick="showContent('mortal-kombat')">Mortal Kombat Legends</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="nav-item">
+                    <img src="path/to/image6.jpg" alt="John Wick" class="img-thumbnail">
+                    <a class="nav-link" href="#" onclick="showContent('john-wick')">John Wick</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="nav-item">
+                    <img src="path/to/image7.jpg" alt="Light shop" class="img-thumbnail">
+                    <a class="nav-link" href="#" onclick="showContent('light-shop')">Light shop</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="nav-item">
+                    <img src="path/to/image8.jpg" alt="Death Note" class="img-thumbnail">
+                    <a class="nav-link" href="#" onclick="showContent('death-note')">Death Note</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-.nav-item {
-    margin-bottom: 20px;
-}
+    <div class="background-text">Agusunx</div>
+    <br><br><br><br><br><br>
 
-.nav-item img {
-    width: 100%;
-    height: auto;
-}
+    <div id="inicio" class="d-none">
+        <h3 class="text-center">¡Bienvenido a Agusunx!</h3>
+        <p class="text-center">Selecciona una película del menú para verla.</p>
+    </div>
 
-.nav-link {
-    display: block;
-    margin-top: 10px;
-    color: #e50914;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-}
+    <div id="culpa-mia" class="d-none">
+        <h3 class="text-center">Culpa Mia</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="" data-src="https://www.tokyvideo.com/es/embed/553493" allowfullscreen></iframe>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
+    </div>
+    <div id="extrano-mundo-de-jack" class="d-none">
+        <h3 class="text-center">El Extraño Mundo De Jack</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="" data-src="https://drive.google.com/file/d/1e8XhJoly6iOLzHS6v0pzEYQPwoHkPlhL/preview" allow="autoplay"></iframe>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
+    </div>
+    <div id="shrek" class="d-none">
+        <h3 class="text-center">Shrek</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="" data-src="https://drive.google.com/file/d/1-6OZPTFXANhEF1YfElMUoMXl84SBEatp/preview" allow="autoplay"></iframe>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
+    </div>
+    <div id="tn-en-vivo" class="d-none">
+        <h3 class="text-center">TN EN VIVO</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="692" height="389" src="" data-src="https://www.youtube.com/embed/cb12KmMMDJA" allowfullscreen></iframe>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
+    </div>
+    <div id="mortal-kombat" class="d-none">
+        <h3 class="text-center">Mortal Kombat Legends: Battle of the Realms 2</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="" data-src="https://www.tokyvideo.com/embed/296950" allowfullscreen></iframe>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
+    </div>
+    <div id="john-wick" class="d-none">
+        <h3 class="text-center">John Wick</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="" data-src="https://www.tokyvideo.com/embed/459643" allowfullscreen></iframe>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
+    </div>
+    <div id="light-shop" class="d-none">
+        <h3 class="text-center">Light shop</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="" data-src="https://drive.google.com/file/d/1-xyz/view" allow="autoplay"></iframe>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
+    </div>
 
-.nav-link:hover {
-    color: #fff;
-    background-color: #e50914;
-    border-radius: 5px;
-    padding: 5px;
-}
+    <div id="death-note" class="d-none">
+        <h3 class="text-center">Death Note</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="" data-src="https://drive.google.com/file/d/1-abc/view" allow="autoplay"></iframe>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
+    </div>
 
-.background-text {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -10%);
-    color: #fff;
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-iframe, video {
-    display: block;
-    max-width: 100%;
-    margin: 20px auto;
-    border: 3px solid #e50914;
-    border-radius: 10px;
-}
-
-h3 {
-    text-align: center;
-    color: #e50914;
-    font-size: 32px; /* Aumentado el tamaño de la fuente */
-    margin-top: 20px;
-    font-family: 'Courier New', Courier
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
