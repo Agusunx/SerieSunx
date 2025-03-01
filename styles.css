@@ -1,7 +1,7 @@
 body {
     font-family: 'Arial', sans-serif;
     background-image: url('https://img.freepik.com/foto-gratis/luces-brillantes-sobre-fondo-azul-oscuro_23-2147798922.jpg?t=st=1735503210~exp=1735506810~hmac=70c4fa65d40c8506a6b457a668bdb2ed2111e0f6dafb877cf2c192bd2a81efaa&w=740');
-    color: #333;
+    color: #fff;
     margin: 0;
     padding: 0;
     background-size: cover;
@@ -10,10 +10,12 @@ body {
 }
 
 header, footer {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
     text-align: center;
     padding: 10px 0;
+    border-bottom: 3px solid #e50914;
+    border-top: 3px solid #e50914;
 }
 
 .background-text {
@@ -21,7 +23,7 @@ header, footer {
     top: 10%;
     left: 50%;
     transform: translate(-50%, -10%);
-    color: white;
+    color: #fff;
     font-size: 50px;
     font-weight: bold;
     text-align: center;
@@ -34,14 +36,15 @@ iframe, video {
     display: block;
     max-width: 100%;
     margin: 20px auto;
-    border: none;
+    border: 3px solid #e50914;
+    border-radius: 10px;
 }
 
 h3 {
     text-align: center;
-    color: indianred;
-    text-size: 20px
-    
+    color: #e50914;
+    font-size: 24px;
+    margin-top: 20px;
 }
 
 p {
@@ -49,15 +52,36 @@ p {
     max-width: 100%;
     width: 640px;
     margin: 0 auto 20px;
-    font-size: 14px;
-    color: #555;
+    font-size: 16px;
+    color: #ddd;
 }
 
+.card {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #e50914;
+    color: #fff;
+}
 
+.card-title {
+    color: #e50914;
+}
+
+.card-img-top {
+    border-bottom: 1px solid #e50914;
+}
+
+.movie-category {
+    margin-top: 30px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top: 3px solid #e50914;
+}
 
 @media (max-width: 640px) {
     p {
         width: 90%;
-        font-size: 12px;
+        font-size: 14px;
     }
 }
