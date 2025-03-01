@@ -1,10 +1,9 @@
-function showContent(id) {
-    var sections = document.querySelectorAll('body > div');
+function showContent(id, url) {
+    var sections = document.querySelectorAll('.content > div');
     sections.forEach(function(section) {
-        if (section.id === id) {
-            section.classList.remove('d-none');
-        } else {
-            section.classList.add('d-none');
-        }
+        section.classList.add('d-none');
     });
+    document.getElementById(id).classList.remove('d-none');
+    var iframe = document.getElementById(id + '-iframe');
+    iframe.src = url;
 }
