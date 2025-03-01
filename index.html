@@ -16,31 +16,31 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#" onclick="showContent('inicio')">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#culpa-mia">Culpa Mia</a>
+                    <a class="nav-link" href="#" onclick="showContent('culpa-mia')">Culpa Mia</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#extrano-mundo-de-jack">El Extraño Mundo De Jack</a>
+                    <a class="nav-link" href="#" onclick="showContent('extrano-mundo-de-jack')">El Extraño Mundo De Jack</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#shrek">Shrek</a>
+                    <a class="nav-link" href="#" onclick="showContent('shrek')">Shrek</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#tn-en-vivo">TN EN VIVO</a>
+                    <a class="nav-link" href="#" onclick="showContent('tn-en-vivo')">TN EN VIVO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#mortal-kombat">Mortal Kombat Legends</a>
+                    <a class="nav-link" href="#" onclick="showContent('mortal-kombat')">Mortal Kombat Legends</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#john-wick">John Wick</a>
+                    <a class="nav-link" href="#" onclick="showContent('john-wick')">John Wick</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#light-shop">Light shop</a>
+                    <a class="nav-link" href="#" onclick="showContent('light-shop')">Light shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#death-note">Death Note</a>
+                    <a class="nav-link" href="#" onclick="showContent('death-note')">Death Note</a>
                 </li>
             </ul>
         </div>
@@ -49,51 +49,80 @@
     <div class="background-text">Agusunx</div>
     <br><br><br><br><br><br>
 
-    <h3 id="culpa-mia" class="text-center">Culpa Mia</h3>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.tokyvideo.com/es/embed/553493" allowfullscreen></iframe>
+    <div id="inicio">
+        <h3 class="text-center">¡Bienvenido a Agusunx!</h3>
+        <p class="text-center">Selecciona una película del menú para verla.</p>
     </div>
-    <br>
-    <h3 id="extrano-mundo-de-jack" class="text-center">El Extraño Mundo De Jack</h3>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe src="https://drive.google.com/file/d/1e8XhJoly6iOLzHS6v0pzEYQPwoHkPlhL/preview" allow="autoplay"></iframe>
+
+    <div id="culpa-mia" class="d-none">
+        <h3 class="text-center">Culpa Mia</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.tokyvideo.com/es/embed/553493" allowfullscreen></iframe>
+        </div>
     </div>
-    <br>
-    <h3 id="shrek" class="text-center">Shrek</h3>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe src="https://drive.google.com/file/d/1-6OZPTFXANhEF1YfElMUoMXl84SBEatp/preview" allow="autoplay"></iframe>
+    <div id="extrano-mundo-de-jack" class="d-none">
+        <h3 class="text-center">El Extraño Mundo De Jack</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://drive.google.com/file/d/1e8XhJoly6iOLzHS6v0pzEYQPwoHkPlhL/preview" allow="autoplay"></iframe>
+        </div>
     </div>
-    <br>
-    <h3 id="tn-en-vivo" class="text-center">TN EN VIVO</h3>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="692" height="389" src="https://www.youtube.com/embed/cb12KmMMDJA" allowfullscreen></iframe>
+    <div id="shrek" class="d-none">
+        <h3 class="text-center">Shrek</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://drive.google.com/file/d/1-6OZPTFXANhEF1YfElMUoMXl84SBEatp/preview" allow="autoplay"></iframe>
+        </div>
     </div>
-    <br>
-    <h3 id="mortal-kombat" class="text-center">Mortal Kombat Legends: Battle of the Realms 2</h3>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe src="https://www.tokyvideo.com/embed/296950" allowfullscreen></iframe>
+    <div id="tn-en-vivo" class="d-none">
+        <h3 class="text-center">TN EN VIVO</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="692" height="389" src="https://www.youtube.com/embed/cb12KmMMDJA" allowfullscreen></iframe>
+        </div>
     </div>
-    <br>
-    <h3 id="john-wick" class="text-center">John Wick</h3>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe src="https://www.tokyvideo.com/embed/459643" allowfullscreen></iframe>
+    <div id="mortal-kombat" class="d-none">
+        <h3 class="text-center">Mortal Kombat Legends: Battle of the Realms 2</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://www.tokyvideo.com/embed/296950" allowfullscreen></iframe>
+        </div>
     </div>
-    <br>
-    <h3 id="light-shop" class="text-center">Light shop</h3>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe src="https://www.tokyvideo.com/es/embed/631455" allowfullscreen></iframe>
+    <div id="john-wick" class="d-none">
+        <h3 class="text-center">John Wick</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://www.tokyvideo.com/embed/459643" allowfullscreen></iframe>
+        </div>
     </div>
-    <br>
-    <h3 id="death-note" class="text-center">Death Note</h3>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe src="https://www.tokyvideo.com/es/embed/193673" allowfullscreen></iframe>
+    <div id="light-shop" class="d-none">
+        <h3 class="text-center">Light shop</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://www.tokyvideo.com/es/embed/631455" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div id="death-note" class="d-none">
+        <h3 class="text-center">Death Note</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://www.tokyvideo.com/es/embed/193673" allowfullscreen></iframe>
+        </div>
     </div>
 
     <footer class="bg-dark text-white text-center py-2">
         <p>© 2025 Agusunx. Todos los derechos reservados.</p>
     </footer>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showContent(id) {
+            var sections = document.querySelectorAll('body > div');
+            sections.forEach(function(section) {
+                if (section.id === id) {
+                    section.classList.remove('d-none');
+                } else {
+                    section.classList.add('d-none');
+                }
+            });
+        }
+    </script>
 </body>
+</html>
+
 </html>
