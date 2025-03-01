@@ -9,33 +9,30 @@ body {
     background-attachment: fixed;
 }
 
-.navbar {
-    font-size: 1.2em; /* Agrandar el texto del nav */
-    background-color: rgba(0, 0, 0, 0.9);
+.nav-item {
+    margin-bottom: 20px;
 }
 
-.navbar-brand {
-    font-size: 1.5em; /* Agrandar el texto de la marca */
+.nav-item img {
+    width: 100%;
+    height: auto;
 }
 
 .nav-link {
-    color: #e50914 !important;
-    margin-right: 10px;
+    display: block;
+    margin-top: 10px;
+    color: #e50914;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
 }
 
 .nav-link:hover {
-    color: #fff !important;
+    color: #fff;
     background-color: #e50914;
     border-radius: 5px;
-}
-
-header, footer {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    border-bottom: 3px solid #e50914;
-    border-top: 3px solid #e50914;
+    padding: 5px;
 }
 
 .background-text {
@@ -68,6 +65,4 @@ h3 {
     font-family: 'Courier New', Courier, monospace; /* Cambiada la fuente */
 }
 
-p {
-    text-align: center;
-}
+p
