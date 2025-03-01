@@ -9,6 +9,26 @@ body {
     background-attachment: fixed;
 }
 
+.navbar {
+    font-size: 1.2em; /* Agrandar el texto del nav */
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-brand {
+    font-size: 1.5em; /* Agrandar el texto de la marca */
+}
+
+.nav-link {
+    color: #e50914 !important;
+    margin-right: 10px;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    background-color: #e50914;
+    border-radius: 5px;
+}
+
 header, footer {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
@@ -50,39 +70,4 @@ h3 {
 
 p {
     text-align: center;
-    max-width: 100%;
-    width: 640px;
-    margin: 0 auto 20px;
-    font-size: 16px;
-    color: #ddd;
-}
-
-.card {
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 1px solid #e50914;
-    color: #fff;
-}
-
-.card-title {
-    color: #e50914;
-}
-
-.card-img-top {
-    border-bottom: 1px solid #e50914;
-}
-
-.movie-category {
-    margin-top: 30px;
-}
-
-footer {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-top: 3px solid #e50914;
-}
-
-@media (max-width: 640px) {
-    p {
-        width: 90%;
-        font-size: 14px;
-    }
-}
+   
