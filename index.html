@@ -5,179 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Agusunx</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="styles.css"> </head>
 <body>
     <div id="inicio" class="content-section">
         <h3 class="text-center">¡Bienvenido a SerieSunx!</h3>
         <p class="text-center">Selecciona una película/serie del menú para verla.</p>
 
         <div class="container mt-5 text-center">
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <div class="nav-item">
-                        <img src="https://m.media-amazon.com/images/M/MV5BNjIwZmZhN2YtMmUzNi00ZWVkLWFjNGYtY2Q1YjdiMmYwYWI2XkEyXkFqcGdeQXVyMTA3MDExNDE4._V1_.jpg" alt="Encanto" class="img-thumbnail">
-                        <a class="nav-link" href="#" onclick="showContent('encanto', 'https://www.tokyvideo.com/es/embed/670478')">Encanto</a>
-                    </div>
+            <div class="row" id="movies-container">
                 </div>
-                <div class="col-md-3 mb-4">
-                    <div class="nav-item">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDc9xlS1eaIX-E3ZrnMA2Lwl-ns33AS-VvMg&s" alt="Culpa Mia" class="img-thumbnail">
-                        <a class="nav-link" href="#" onclick="showContent('culpa-mia', 'https://www.tokyvideo.com/es/embed/553493')">Culpa Mia</a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="nav-item">
-                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/96EBE200B57B23A030F6CFF088EDBAA0AABE7F23F871E30B13A584FE9B098BB1/scale?width=1200&aspectRatio=1.78&format=webp" alt="El Extraño Mundo De Jack" class="img-thumbnail">
-                        <a class="nav-link" href="#" onclick="showContent('extrano-mundo-de-jack', 'https://drive.google.com/file/d/1e8XhJoly6iOLzHS6v0pzEYQPwoHkPlhL/preview')">El Extraño Mundo De Jack</a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="nav-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/3/39/Shrek.jpg" alt="Shrek" class="img-thumbnail">
-                        <a class="nav-link" href="#" onclick="showContent('shrek', 'https://drive.google.com/file/d/1-6OZPTFXANhEF1YfElMUoMXl84SBEatp/preview')">Shrek</a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="nav-item">
-                        <img src="https://www.5900.tv/wp-content/uploads/2020/12/tn-vivo.jpg" alt="TN EN VIVO" class="img-thumbnail">
-                        <a class="nav-link" href="#" onclick="showContent('tn-en-vivo', 'https://www.youtube.com/embed/aC3y0rC0f1U?autoplay=1')">TN EN VIVO</a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="nav-item">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHFsdnpA-y5utCH55hWDx_tmYSGbz7WYZfdw&s" alt="Mortal Kombat Legends" class="img-thumbnail">
-                        <a class="nav-link" href="#" onclick="showContent('mortal-kombat', 'https://www.tokyvideo.com/embed/296950')">Mortal Kombat Legends</a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="nav-item">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_FMjpg_UX1000_.jpg" alt="John Wick" class="img-thumbnail">
-                        <a class="nav-link" href="#" onclick="showContent('john-wick', 'https://www.tokyvideo.com/embed/459643')">John Wick</a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="nav-item">
-                        <img src="https://0.soompi.io/wp-content/uploads/2024/11/05210110/light-shop-01.jpeg" alt="Light shop" class="img-thumbnail">
-                        <a class="nav-link" href="#" onclick="showContent('light-shop', 'https://www.tokyvideo.com/es/embed/631455')">Light shop</a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="nav-item">
-                        <img src="https://i0.wp.com/www.septimacaja.com/wp-content/uploads/3048628-4726801454-death_ya2w.jpg?fit=1680%2C1050&ssl=1" alt="Death Note" class="img-thumbnail">
-                        <a class="nav-link" href="#" onclick="showContent('death-note', 'https://www.tokyvideo.com/es/embed/193673')">Death Note</a>
-                    </div>
-                </div>
-                   <div class="col-md-3 mb-4">
-                    <div class="nav-item">
-                        <img src="https://via.placeholder.com/150?text=Uqload+Movie" alt="Pelicula Uqload" class="img-thumbnail">
-                        <a class="nav-link" href="#" onclick="showContent('uqload-movie', 'https://uqload.net/embed-t5s2adh8c7oi.html')">Pelicula Uqload</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
-    <div id="encanto" class="content-section d-none">
-        <h3 class="text-center">Encanto</h3>
-        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
-            <iframe id="encanto-iframe" class="embed-responsive-item" src="" frameborder="0" scrolling="no" allowfullscreen webkitallowfullscreen mozallowfullscreen allowtransparency></iframe>
-        </div>
-        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
-    </div>
+    <div id="video-players-container"></div>
 
-    <div id="culpa-mia" class="content-section d-none">
-        <h3 class="text-center">Culpa Mia</h3>
-        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
-            <iframe id="culpa-mia-iframe" class="embed-responsive-item" src="" allowfullscreen></iframe>
-        </div>
-        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
-    </div>
-
-    <div id="extrano-mundo-de-jack" class="content-section d-none">
-        <h3 class="text-center">El Extraño Mundo De Jack</h3>
-        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
-            <iframe id="extrano-mundo-de-jack-iframe" class="embed-responsive-item" src="" allow="autoplay"></iframe>
-        </div>
-        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
-    </div>
-
-    <div id="shrek" class="content-section d-none">
-        <h3 class="text-center">Shrek</h3>
-        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
-            <iframe id="shrek-iframe" class="embed-responsive-item" src="" allow="autoplay"></iframe>
-        </div>
-        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
-    </div>
-
-    <div id="tn-en-vivo" class="content-section d-none">
-        <h3 class="text-center">TN EN VIVO</h3>
-        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
-            <iframe id="tn-en-vivo-iframe" class="embed-responsive-item" src="" allowfullscreen></iframe>
-        </div>
-        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
-    </div>
-
-    <div id="mortal-kombat" class="content-section d-none">
-        <h3 class="text-center">Mortal Kombat Legends: Battle of the Realms 2</h3>
-        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
-            <iframe id="mortal-kombat-iframe" class="embed-responsive-item" src="" allowfullscreen></iframe>
-        </div>
-        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
-    </div>
-
-    <div id="john-wick" class="content-section d-none">
-        <h3 class="text-center">John Wick</h3>
-        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
-            <iframe id="john-wick-iframe" class="embed-responsive-item" src="" allowfullscreen></iframe>
-        </div>
-        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
-    </div>
-
-    <div id="light-shop" class="content-section d-none">
-        <h3 class="text-center">Light shop</h3>
-        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
-            <iframe id="light-shop-iframe" class="embed-responsive-item" src="" allow="autoplay"></iframe>
-        </div>
-        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
-    </div>
-
-    <div id="death-note" class="content-section d-none">
-        <h3 class="text-center">Death Note</h3>
-        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
-            <iframe id="death-note-iframe" class="embed-responsive-item" src="" allow="autoplay"></iframe>
-        </div>
-        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
-    </div>
-
-    <div id="uqload-movie" class="content-section d-none">
-        <h3 class="text-center">Pelicula Uqload</h3>
-        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
-            <iframe id="uqload-movie-iframe" class="embed-responsive-item" src="" allow="autoplay"></iframe>
-        </div>
-        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
-    </div>
-
-    <script>
-        function showContent(id, videoUrl) {
-            // Hide all content sections
-            var contentSections = document.querySelectorAll('.content-section');
-            contentSections.forEach(function(section) {
-                section.classList.add('d-none');
-            });
-
-            // Show the selected content section
-            var selectedSection = document.getElementById(id);
-            selectedSection.classList.remove('d-none');
-
-            // If a video URL is provided, set the iframe src
-            if (videoUrl) {
-                var iframe = document.getElementById(id + '-iframe');
-                if (iframe) {
-                    iframe.src = videoUrl;
-                }
-            }
-        }
-    </script>
-</body>
+    <script src="script.js"></script> </body>
 </html>
