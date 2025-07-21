@@ -56,7 +56,7 @@ const movies = [
     },
     {
         id: 'uqload-movie',
-        title: 'Pelicula Uqload',
+        title: 'El Ángel',
         imageUrl: 'https://via.placeholder.com/150?text=Uqload+Movie',
         videoUrl: 'https://uqload.net/embed-t5s2adh8c7oi.html'
     }
