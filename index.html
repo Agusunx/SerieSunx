@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Agusunx</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css"> </head>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
     <div id="inicio" class="content-section">
         <h3 class="text-center">¡Bienvenido a SerieSunx!</h3>
@@ -67,9 +68,10 @@
                         <a class="nav-link" href="#" onclick="showContent('death-note', 'https://www.tokyvideo.com/es/embed/193673')">Death Note</a>
                     </div>
                 </div>
-                 <div class="col-md-3 mb-4">
+                   <div class="col-md-3 mb-4">
                     <div class="nav-item">
-                        <img src="https://via.placeholder.com/150?text=Uqload+Movie" alt="Pelicula Uqload" class="img-thumbnail"> <a class="nav-link" href="#" onclick="showContent('uqload-movie', 'https://uqload.net/embed-t5s2adh8c7oi.html')">Pelicula Uqload</a>
+                        <img src="https://via.placeholder.com/150?text=Uqload+Movie" alt="Pelicula Uqload" class="img-thumbnail">
+                        <a class="nav-link" href="#" onclick="showContent('uqload-movie', 'https://uqload.net/embed-t5s2adh8c7oi.html')">Pelicula Uqload</a>
                     </div>
                 </div>
             </div>
@@ -137,4 +139,45 @@
         <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
             <iframe id="light-shop-iframe" class="embed-responsive-item" src="" allow="autoplay"></iframe>
         </div>
-        <button class="btn btn-primary mt-3" onclick="showContent('
+        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
+    </div>
+
+    <div id="death-note" class="content-section d-none">
+        <h3 class="text-center">Death Note</h3>
+        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
+            <iframe id="death-note-iframe" class="embed-responsive-item" src="" allow="autoplay"></iframe>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
+    </div>
+
+    <div id="uqload-movie" class="content-section d-none">
+        <h3 class="text-center">Pelicula Uqload</h3>
+        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 640px;">
+            <iframe id="uqload-movie-iframe" class="embed-responsive-item" src="" allow="autoplay"></iframe>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="showContent('inicio')">Volver a Inicio</button>
+    </div>
+
+    <script>
+        function showContent(id, videoUrl) {
+            // Hide all content sections
+            var contentSections = document.querySelectorAll('.content-section');
+            contentSections.forEach(function(section) {
+                section.classList.add('d-none');
+            });
+
+            // Show the selected content section
+            var selectedSection = document.getElementById(id);
+            selectedSection.classList.remove('d-none');
+
+            // If a video URL is provided, set the iframe src
+            if (videoUrl) {
+                var iframe = document.getElementById(id + '-iframe');
+                if (iframe) {
+                    iframe.src = videoUrl;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
