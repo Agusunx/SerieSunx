@@ -3,7 +3,7 @@ const movies = [
     {
         id: 'encanto',
         title: 'Encanto',
-        imageUrl: 'https://lumiere-a.akamaihd.net/v1/images/encanto_ka_las_pay1_92ad7410.jpeg?region=0%2C0%2C1080%2C1350',
+        imageUrl: 'https://c.files.bbci.co.uk/A91F/production/_121759234_1encanto_group.jpg',
         videoUrl: 'https://www.tokyvideo.com/es/embed/670478'
     },
     {
