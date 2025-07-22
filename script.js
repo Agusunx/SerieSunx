@@ -57,7 +57,7 @@ const movies = [
     {
         id: 'uqload-movie',
         title: 'El Ángel',
-        imageUrl: 'https://via.placeholder.com/150?text=Uqload+Movie',
+        imageUrl: 'https://encuestadecineargentino.com/wp-content/uploads/2022/10/elangel.jpg',
         videoUrl: 'https://uqload.net/embed-t5s2adh8c7oi.html'
     }
 ];
