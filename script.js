@@ -3,7 +3,7 @@ const movies = [
     {
         id: 'encanto',
         title: 'Encanto',
-        imageUrl: 'https://m.media-amazon.com/images/M/MV5BNjIwZmZhN2YtMmUzNi00ZWVkLWFjNGYtY2Q1YjdiMmYwYWI2XkEyXkFqcGdeQXVyMTA3MDExNDE4._V1_.jpg',
+        imageUrl: 'https://lumiere-a.akamaihd.net/v1/images/encanto_ka_las_pay1_92ad7410.jpeg?region=0%2C0%2C1080%2C1350',
         videoUrl: 'https://www.tokyvideo.com/es/embed/670478'
     },
     {
