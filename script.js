@@ -3,7 +3,7 @@ const movies = [
     {
         id: 'encanto',
         title: 'Encanto',
-        imageUrl: 'https://c.files.bbci.co.uk/A91F/production/_121759234_1encanto_group.jpg',
+        imageUrl: 'https://m.media-amazon.com/images/M/MV5BNjIwZmZhN2YtMmUzNi00ZWVkLWFjNGYtY2Q1YjdiMmYwYWI2XkEyXkFqcGdeQXVyMTA3MDExNDE4._V1_.jpg', // Revertí a una URL de Amazon más común para Encanto
         videoUrl: 'https://www.tokyvideo.com/es/embed/670478'
     },
     {
@@ -57,7 +57,7 @@ const movies = [
     {
         id: 'uqload-movie',
         title: 'El Ángel',
-        imageUrl: 'https://encuestadecineargentino.com/wp-content/uploads/2022/10/elangel.jpg',
+        imageUrl: 'https://m.media-amazon.com/images/M/MV5BZjY5NDcyNDctNjRkNC00MjM4LTgyMzMtZTUxODU0YTlkYmUwXkEyXkFqcGdeQXVyMTA1NjYxNzU2._V1_FMjpg_UX1000_.jpg', // Cambié la URL por una más confiable para "El Ángel"
         videoUrl: 'https://uqload.net/embed-t5s2adh8c7oi.html'
     }
 ];
