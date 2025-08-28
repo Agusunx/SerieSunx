@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -33,7 +32,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-950 text-white min-h-screen">
+<body class="bg-gray-950 text-white min-h-screen flex flex-col">
 
     <!-- Barra de Navegación Superior -->
     <header class="fixed top-0 left-0 w-full z-20 bg-gray-950/90 backdrop-blur-sm p-4 flex justify-between items-center shadow-lg">
@@ -48,7 +47,7 @@
     </header>
 
     <!-- Sección Principal (Contenido Destacado) -->
-    <main class="pt-20 p-6 sm:p-8">
+    <main class="pt-20 p-6 sm:p-8 flex-grow">
         <section class="relative h-96 sm:h-[500px] w-full rounded-lg overflow-hidden mb-12">
             <!-- Imagen de fondo del contenido principal -->
             <img src="https://placehold.co/1920x1080/000000/ffffff?text=Death+Note" alt="Death Note" class="w-full h-full object-cover">
@@ -64,16 +63,7 @@
                 </div>
             </div>
         </section>
- <footer class="bg-gray-900 text-gray-400 py-6">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 SerieSunx. Todos los derechos reservados.</p>
-            <p class="mt-2 text-sm">Agusunx</p>
-            <div class="mt-4 flex justify-center space-x-4">
-                <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
-                <a href="#" class="hover:text-white transition-colors">Términos de Servicio</a>
-            </div>
-        </div>
-    </footer>
+
         <!-- Sección de Carruseles de Películas/Series -->
         <section>
             <!-- Título de la Categoría -->
@@ -98,6 +88,18 @@
             </div>
         </section>
     </main>
+    
+    <!-- Pie de página -->
+    <footer class="bg-gray-900 text-gray-400 py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 SerieSunx. Todos los derechos reservados.</p>
+            <p class="mt-2 text-sm">Agusunx</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
+                <a href="#" class="hover:text-white transition-colors">Términos de Servicio</a>
+            </div>
+        </div>
+    </footer>
 
     <!-- Reproductor de Video en Modal -->
     <div id="video-player-modal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
