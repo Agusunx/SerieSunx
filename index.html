@@ -51,13 +51,12 @@
     <main class="pt-20 p-6 sm:p-8">
         <section class="relative h-96 sm:h-[500px] w-full rounded-lg overflow-hidden mb-12">
             <!-- Imagen de fondo del contenido principal -->
-            <img src="https://placehold.co/1920x1080/000000/ffffff?text=Pelicula+Destacada" alt="Pelicula destacada" class="w-full h-full object-cover">
+            <img src="https://placehold.co/1920x1080/000000/ffffff?text=Death+Note" alt="Death Note" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent flex items-end p-6 sm:p-10">
                 <div class="space-y-4">
-                    <h2 class="text-3xl sm:text-5xl font-extrabold drop-shadow-xl">Título de la Película</h2>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold drop-shadow-xl">Death Note</h2>
                     <p class="text-lg sm:text-xl max-w-2xl drop-shadow-lg hidden sm:block">
-                        Una descripción cautivadora de la película o serie que está de moda.
-                        Podría ser la sinopsis de Death Note, por ejemplo.
+                        Un brillante estudiante de preparatoria encuentra un cuaderno misterioso que le otorga el poder de matar a cualquier persona cuyo nombre escriba en sus páginas.
                     </p>
                     <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition-colors">
                         Ver Ahora
@@ -71,21 +70,21 @@
             <!-- Título de la Categoría -->
             <h3 class="text-2xl font-semibold mb-4 ml-2">Tendencias Ahora</h3>
             <!-- Contenedor del Carrusel -->
-            <div class="thumbnails-carousel flex overflow-x-auto gap-4 pb-4">
+            <div id="carousel-tendencias" class="thumbnails-carousel flex overflow-x-auto gap-4 pb-4">
                 <!-- Las tarjetas de películas se generarán aquí con JavaScript -->
             </div>
         </section>
 
         <section class="mt-8">
             <h3 class="text-2xl font-semibold mb-4 ml-2">Películas de Terror</h3>
-            <div class="thumbnails-carousel flex overflow-x-auto gap-4 pb-4">
+            <div id="carousel-terror" class="thumbnails-carousel flex overflow-x-auto gap-4 pb-4">
                 <!-- Las tarjetas de películas se generarán aquí con JavaScript -->
             </div>
         </section>
         
         <section class="mt-8">
             <h3 class="text-2xl font-semibold mb-4 ml-2">Para Maratón</h3>
-            <div class="thumbnails-carousel flex overflow-x-auto gap-4 pb-4">
+            <div id="carousel-maraton" class="thumbnails-carousel flex overflow-x-auto gap-4 pb-4">
                 <!-- Las tarjetas de películas se generarán aquí con JavaScript -->
             </div>
         </section>
@@ -102,46 +101,62 @@
     <!-- Script de JavaScript para la lógica de la página -->
     <script>
         // Array con la información de las películas y series
-        // Puedes agregar más categorías o propiedades aquí
+        // Se agregó la propiedad 'category' para organizar los títulos en los carruseles.
         const movies = [
-            { id: '1', title: 'Death Note', image: 'https://placehold.co/400x600/1e293b/ffffff?text=Death+Note', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '2', title: 'Stranger Things', image: 'https://placehold.co/400x600/334155/ffffff?text=Stranger+Things', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '3', title: 'The Witcher', image: 'https://placehold.co/400x600/475569/ffffff?text=The+Witcher', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '4', title: 'Breaking Bad', image: 'https://placehold.co/400x600/64748b/ffffff?text=Breaking+Bad', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '5', title: 'The Office', image: 'https://placehold.co/400x600/94a3b8/ffffff?text=The+Office', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '6', title: 'Mindhunter', image: 'https://placehold.co/400x600/1e293b/ffffff?text=Mindhunter', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '7', title: 'Dark', image: 'https://placehold.co/400x600/334155/ffffff?text=Dark', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '8', title: 'Narcos', image: 'https://placehold.co/400x600/475569/ffffff?text=Narcos', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '1', title: 'Death Note', category: 'Tendencias Ahora', image: 'https://placehold.co/400x600/1e293b/ffffff?text=Death+Note', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '2', title: 'El Silencio de los Corderos', category: 'Películas de Terror', image: 'https://placehold.co/400x600/334155/ffffff?text=El+Silencio+de+los+Corderos', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '3', title: 'The Witcher', category: 'Tendencias Ahora', image: 'https://placehold.co/400x600/475569/ffffff?text=The+Witcher', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '4', title: 'El Resplandor', category: 'Películas de Terror', image: 'https://placehold.co/400x600/64748b/ffffff?text=El+Resplandor', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '5', title: 'The Office', category: 'Para Maratón', image: 'https://placehold.co/400x600/94a3b8/ffffff?text=The+Office', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '6', title: 'Mindhunter', category: 'Tendencias Ahora', image: 'https://placehold.co/400x600/1e293b/ffffff?text=Mindhunter', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '7', title: 'Dark', category: 'Para Maratón', image: 'https://placehold.co/400x600/334155/ffffff?text=Dark', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '8', title: 'Narcos', category: 'Para Maratón', image: 'https://placehold.co/400x600/475569/ffffff?text=Narcos', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '9', title: 'Inception', category: 'Tendencias Ahora', image: 'https://placehold.co/400x600/818cf8/ffffff?text=Inception', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '10', title: 'Hereditary', category: 'Películas de Terror', image: 'https://placehold.co/400x600/a855f7/ffffff?text=Hereditary', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '11', title: 'Chernobyl', category: 'Para Maratón', image: 'https://placehold.co/400x600/0f766e/ffffff?text=Chernobyl', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '12', title: 'Black Mirror', category: 'Para Maratón', image: 'https://placehold.co/400x600/f87171/ffffff?text=Black+Mirror', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '13', title: 'Parasite', category: 'Tendencias Ahora', image: 'https://placehold.co/400x600/d946ef/ffffff?text=Parasite', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '14', title: 'Get Out', category: 'Películas de Terror', image: 'https://placehold.co/400x600/9333ea/ffffff?text=Get+Out', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: '15', title: 'Game of Thrones', category: 'Para Maratón', image: 'https://placehold.co/400x600/1e40af/ffffff?text=Game+of+Thrones', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' }
         ];
 
-        // Referencias a los elementos del DOM
-        const carousels = document.querySelectorAll('.thumbnails-carousel');
+        // Referencias a los contenedores de los carruseles
+        const carousels = {
+            'Tendencias Ahora': document.getElementById('carousel-tendencias'),
+            'Películas de Terror': document.getElementById('carousel-terror'),
+            'Para Maratón': document.getElementById('carousel-maraton'),
+        };
         const videoPlayerModal = document.getElementById('video-player-modal');
         const videoPlayer = document.getElementById('video-player');
         const closeVideoButton = document.getElementById('close-video');
 
         // Función para renderizar las tarjetas de películas
         function renderMovies() {
-            carousels.forEach(carousel => {
-                carousel.innerHTML = ''; // Limpia el contenedor antes de renderizar
-                movies.forEach(movie => {
-                    // Crea el elemento de la tarjeta (div)
-                    const card = document.createElement('div');
-                    card.classList.add('movie-card', 'flex-shrink-0', 'w-48', 'h-72', 'rounded-lg', 'overflow-hidden', 'cursor-pointer', 'shadow-xl', 'hover:shadow-red-600/50');
-                    card.dataset.id = movie.id;
+            // Limpia todos los carruseles antes de renderizar
+            Object.values(carousels).forEach(carousel => {
+                if (carousel) carousel.innerHTML = '';
+            });
 
-                    // Crea la imagen de la tarjeta
-                    const image = document.createElement('img');
-                    image.src = movie.image;
-                    image.alt = movie.title;
-                    image.classList.add('w-full', 'h-full', 'object-cover');
+            movies.forEach(movie => {
+                const carousel = carousels[movie.category];
+                if (!carousel) return;
 
-                    // Añade la imagen a la tarjeta
-                    card.appendChild(image);
+                // Crea el elemento de la tarjeta (div)
+                const card = document.createElement('div');
+                card.classList.add('movie-card', 'flex-shrink-0', 'w-48', 'h-72', 'rounded-lg', 'overflow-hidden', 'cursor-pointer', 'shadow-xl', 'hover:shadow-red-600/50');
+                card.dataset.id = movie.id;
 
-                    // Añade la tarjeta al carrusel
-                    carousel.appendChild(card);
-                });
+                // Crea la imagen de la tarjeta
+                const image = document.createElement('img');
+                image.src = movie.image;
+                image.alt = movie.title;
+                image.classList.add('w-full', 'h-full', 'object-cover');
+
+                // Añade la imagen a la tarjeta
+                card.appendChild(image);
+
+                // Añade la tarjeta al carrusel de su categoría
+                carousel.appendChild(card);
             });
         }
 
@@ -165,7 +180,7 @@
             renderMovies();
 
             // Delega el evento de clic al contenedor de cada carrusel
-            carousels.forEach(carousel => {
+            document.querySelectorAll('.thumbnails-carousel').forEach(carousel => {
                 carousel.addEventListener('click', (event) => {
                     const card = event.target.closest('.movie-card');
                     if (card) {
