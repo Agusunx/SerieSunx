@@ -1,40 +1,17 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SerieSunx | Netflix Style</title>
-    <!-- Incluye el CDN de Tailwind CSS para todos los estilos -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Importa la fuente Inter de Google Fonts para una apariencia moderna -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Estilo personalizado para el carrusel de miniaturas */
-        .thumbnails-carousel {
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* Internet Explorer 10+ */
-        }
-        .thumbnails-carousel::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-        /* Transición suave para el efecto de hover en las tarjetas */
-        .movie-card {
-            transition: transform 0.3s ease-in-out, z-index 0.3s ease-in-out;
-            transform-origin: center;
-        }
-        .movie-card:hover {
-            transform: scale(1.1);
-            z-index: 10;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-950 text-white min-h-screen flex flex-col">
+<body class="bg-gray-950 text-white min-h-screen flex flex-col font-['Inter']">
 
-    <!-- Barra de Navegación Superior -->
     <header class="fixed top-0 left-0 w-full z-20 bg-gray-950/90 backdrop-blur-sm p-4 flex justify-between items-center shadow-lg">
         <h1 class="text-3xl font-bold text-red-600 tracking-wider">SerieSunx</h1>
         <nav>
@@ -46,174 +23,56 @@
         </nav>
     </header>
 
-    <!-- Sección Principal (Contenido Destacado) -->
     <main class="pt-20 p-6 sm:p-8 flex-grow">
-        <section class="relative h-96 sm:h-[500px] w-full rounded-lg overflow-hidden mb-12">
-            <!-- Imagen de fondo del contenido principal -->
-            <img src="https://placehold.co/1920x1080/000000/ffffff?text=Death+Note" alt="Death Note" class="w-full h-full object-cover">
+        <section id="hero-section" class="relative h-96 sm:h-[500px] w-full rounded-lg overflow-hidden mb-12 transition-all duration-500">
+            <img id="hero-img" src="https://placehold.co/1920x1080/000000/ffffff?text=Death+Note" alt="Hero Image" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent flex items-end p-6 sm:p-10">
-                <div class="space-y-4">
-                    <h2 class="text-3xl sm:text-5xl font-extrabold drop-shadow-xl">Death Note</h2>
-                    <p class="text-lg sm:text-xl max-w-2xl drop-shadow-lg hidden sm:block">
+                <div class="space-y-4 max-w-2xl">
+                    <h2 id="hero-title" class="text-3xl sm:text-5xl font-extrabold drop-shadow-xl">Death Note</h2>
+                    <p id="hero-desc" class="text-lg sm:text-xl drop-shadow-lg hidden sm:block">
                         Un brillante estudiante de preparatoria encuentra un cuaderno misterioso que le otorga el poder de matar a cualquier persona cuyo nombre escriba en sus páginas.
                     </p>
-                    <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition-colors">
-                        Ver Ahora
+                    <button id="hero-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition-colors flex items-center gap-2">
+                        <span>▶</span> Ver Ahora
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- Sección de Carruseles de Películas/Series -->
         <section>
-            <!-- Título de la Categoría -->
             <h3 class="text-2xl font-semibold mb-4 ml-2">Tendencias Ahora</h3>
-            <!-- Contenedor del Carrusel -->
-            <div id="carousel-tendencias" class="thumbnails-carousel flex overflow-x-auto gap-4 pb-4">
-                <!-- Las tarjetas de películas se generarán aquí con JavaScript -->
-            </div>
+            <div id="carousel-tendencias" class="thumbnails-carousel flex overflow-x-auto gap-4 pb-4 px-2"></div>
         </section>
 
         <section class="mt-8">
             <h3 class="text-2xl font-semibold mb-4 ml-2">Películas de Terror</h3>
-            <div id="carousel-terror" class="thumbnails-carousel flex overflow-x-auto gap-4 pb-4">
-                <!-- Las tarjetas de películas se generarán aquí con JavaScript -->
-            </div>
+            <div id="carousel-terror" class="thumbnails-carousel flex overflow-x-auto gap-4 pb-4 px-2"></div>
         </section>
         
         <section class="mt-8">
             <h3 class="text-2xl font-semibold mb-4 ml-2">Para Maratón</h3>
-            <div id="carousel-maraton" class="thumbnails-carousel flex overflow-x-auto gap-4 pb-4">
-                <!-- Las tarjetas de películas se generarán aquí con JavaScript -->
-            </div>
+            <div id="carousel-maraton" class="thumbnails-carousel flex overflow-x-auto gap-4 pb-4 px-2"></div>
         </section>
     </main>
     
-    <!-- Pie de página -->
     <footer class="bg-gray-900 text-gray-400 py-6">
         <div class="container mx-auto px-4 text-center">
             <p>&copy; 2025 SerieSunx. Todos los derechos reservados.</p>
             <p class="mt-2 text-sm">Agusunx</p>
             <div class="mt-4 flex justify-center space-x-4">
-                <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
-                <a href="#" class="hover:text-white transition-colors">Términos de Servicio</a>
+                <a href="#" class="hover:text-white transition-colors">Privacidad</a>
+                <a href="#" class="hover:text-white transition-colors">Términos</a>
             </div>
         </div>
     </footer>
 
-    <!-- Reproductor de Video en Modal -->
-    <div id="video-player-modal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
-        <button id="close-video" class="absolute top-4 right-4 text-white text-3xl font-bold p-2 hover:text-red-600 transition-colors">&times;</button>
-        <div class="relative w-full max-w-4xl h-auto aspect-video">
-            <video id="video-player" controls class="w-full h-full rounded-lg"></video>
+    <div id="video-player-modal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+        <button id="close-video" class="absolute top-4 right-4 text-white text-4xl hover:text-red-600 transition-colors">&times;</button>
+        <div class="relative w-full max-w-5xl h-auto aspect-video bg-black rounded-lg shadow-2xl overflow-hidden">
+            <video id="video-player" controls class="w-full h-full"></video>
         </div>
     </div>
 
-    <!-- Script de JavaScript para la lógica de la página -->
-    <script>
-        // Array con la información de las películas y series
-        // Se agregó la propiedad 'category' para organizar los títulos en los carruseles.
-        const movies = [
-            { id: '1', title: 'Death Note', category: 'Tendencias Ahora', image: 'https://placehold.co/400x600/1e293b/ffffff?text=Death+Note', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '2', title: 'El Silencio de los Corderos', category: 'Películas de Terror', image: 'https://placehold.co/400x600/334155/ffffff?text=El+Silencio+de+los+Corderos', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '3', title: 'The Witcher', category: 'Tendencias Ahora', image: 'https://placehold.co/400x600/475569/ffffff?text=The+Witcher', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '4', title: 'El Resplandor', category: 'Películas de Terror', image: 'https://placehold.co/400x600/64748b/ffffff?text=El+Resplandor', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '5', title: 'The Office', category: 'Para Maratón', image: 'https://placehold.co/400x600/94a3b8/ffffff?text=The+Office', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '6', title: 'Mindhunter', category: 'Tendencias Ahora', image: 'https://placehold.co/400x600/1e293b/ffffff?text=Mindhunter', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '7', title: 'Dark', category: 'Para Maratón', image: 'https://placehold.co/400x600/334155/ffffff?text=Dark', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '8', title: 'Narcos', category: 'Para Maratón', image: 'https://placehold.co/400x600/475569/ffffff?text=Narcos', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '9', title: 'Inception', category: 'Tendencias Ahora', image: 'https://placehold.co/400x600/818cf8/ffffff?text=Inception', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '10', title: 'Hereditary', category: 'Películas de Terror', image: 'https://placehold.co/400x600/a855f7/ffffff?text=Hereditary', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '11', title: 'Chernobyl', category: 'Para Maratón', image: 'https://placehold.co/400x600/0f766e/ffffff?text=Chernobyl', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '12', title: 'Black Mirror', category: 'Para Maratón', image: 'https://placehold.co/400x600/f87171/ffffff?text=Black+Mirror', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '13', title: 'Parasite', category: 'Tendencias Ahora', image: 'https://placehold.co/400x600/d946ef/ffffff?text=Parasite', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '14', title: 'Get Out', category: 'Películas de Terror', image: 'https://placehold.co/400x600/9333ea/ffffff?text=Get+Out', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-            { id: '15', title: 'Game of Thrones', category: 'Para Maratón', image: 'https://placehold.co/400x600/1e40af/ffffff?text=Game+of+Thrones', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' }
-        ];
-
-        // Referencias a los contenedores de los carruseles
-        const carousels = {
-            'Tendencias Ahora': document.getElementById('carousel-tendencias'),
-            'Películas de Terror': document.getElementById('carousel-terror'),
-            'Para Maratón': document.getElementById('carousel-maraton'),
-        };
-        const videoPlayerModal = document.getElementById('video-player-modal');
-        const videoPlayer = document.getElementById('video-player');
-        const closeVideoButton = document.getElementById('close-video');
-
-        // Función para renderizar las tarjetas de películas
-        function renderMovies() {
-            // Limpia todos los carruseles antes de renderizar
-            Object.values(carousels).forEach(carousel => {
-                if (carousel) carousel.innerHTML = '';
-            });
-
-            movies.forEach(movie => {
-                const carousel = carousels[movie.category];
-                if (!carousel) return;
-
-                // Crea el elemento de la tarjeta (div)
-                const card = document.createElement('div');
-                card.classList.add('movie-card', 'flex-shrink-0', 'w-48', 'h-72', 'rounded-lg', 'overflow-hidden', 'cursor-pointer', 'shadow-xl', 'hover:shadow-red-600/50');
-                card.dataset.id = movie.id;
-
-                // Crea la imagen de la tarjeta
-                const image = document.createElement('img');
-                image.src = movie.image;
-                image.alt = movie.title;
-                image.classList.add('w-full', 'h-full', 'object-cover');
-
-                // Añade la imagen a la tarjeta
-                card.appendChild(image);
-
-                // Añade la tarjeta al carrusel de su categoría
-                carousel.appendChild(card);
-            });
-        }
-
-        // Función para mostrar el reproductor de video
-        function showVideoPlayer(videoUrl) {
-            videoPlayer.src = videoUrl;
-            videoPlayerModal.classList.remove('hidden');
-            videoPlayerModal.classList.add('flex');
-        }
-
-        // Función para ocultar el reproductor de video
-        function hideVideoPlayer() {
-            videoPlayer.pause();
-            videoPlayer.src = '';
-            videoPlayerModal.classList.remove('flex');
-            videoPlayerModal.classList.add('hidden');
-        }
-
-        // Escuchadores de eventos para cada tarjeta de película
-        document.addEventListener('DOMContentLoaded', () => {
-            renderMovies();
-
-            // Delega el evento de clic al contenedor de cada carrusel
-            document.querySelectorAll('.thumbnails-carousel').forEach(carousel => {
-                carousel.addEventListener('click', (event) => {
-                    const card = event.target.closest('.movie-card');
-                    if (card) {
-                        const movieId = card.dataset.id;
-                        const movie = movies.find(m => m.id === movieId);
-                        if (movie) {
-                            showVideoPlayer(movie.videoUrl);
-                        }
-                    }
-                });
-            });
-
-            // Escuchador para el botón de cerrar del reproductor
-            closeVideoButton.addEventListener('click', hideVideoPlayer);
-
-            // Escuchador para cerrar el reproductor al presionar ESC
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape') {
-                    hideVideoPlayer();
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
