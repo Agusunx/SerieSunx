@@ -1,97 +1,21 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-image: url('https://img.freepik.com/foto-gratis/luces-brillantes-sobre-fondo-azul-oscuro_23-2147798922.jpg?t=st=1735503210~exp=1735506810~hmac=70c4fa65d40c8506a6b457a668bdb2ed2111e0f6dafb877cf2c192bd2a81efaa&w=740');
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+/* Ocultar barra de desplazamiento pero permitir scroll */
+.thumbnails-carousel {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
 }
 
-.container {
-    margin-top: 50px;
+.thumbnails-carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
 }
 
-.nav-item {
-    margin-bottom: 20px;
+/* Efectos de las tarjetas */
+.movie-card {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), z-index 0.3s;
+    transform-origin: center;
 }
 
-.nav-item img {
-    width: 100%;
-    height: auto;
+.movie-card:hover {
+    transform: scale(1.1);
+    z-index: 20;
+    box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.5); /* Sombra roja suave */
 }
-
-.nav-link {
-    display: block;
-    margin-top: 10px;
-    color: #e50914;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-}
-
-.nav-link:hover {
-    color: #fff;
-    background-color: #e50914;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-.content {
-    margin-top: 50px;
-}
-
-.background-text {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -10%);
-    color: #fff;
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-iframe, video {
-    display: block;
-    max-width: 100%;
-    margin: 20px auto;
-    border: 3px solid #e50914;
-    border-radius: 10px;
-}
-
-h3 {
-    text-align: center;
-    color: #e50914;
-    font-size: 32px; /* Aumentado el tamaño de la fuente */
-    margin-top: 20px;
-    font-family: 'Courier New', Courier, monospace; /* Cambiada la fuente */
-}
-
-p {
-    text-align: center;
-}
-
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #fff;
-    background-color: #e50914;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #fff;
-    color: #e50914;
-}
-
