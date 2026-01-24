@@ -1,42 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-// 5. REPRODUCIR VIDEO (Soporta MEGA y Directos)
-function reproducirVideo(url) {
-    if (!url || url.includes("LINK_")) {
-        alert("⚠️ Link no disponible");
-        return;
-    }
 
-    const videoElement = document.getElementById('reproductor');
-    const container = videoElement.parentElement; // El contenedor donde está el video
-
-    // 1. Eliminar iframe previo si existía de una peli anterior
-    const iframeViejo = document.getElementById('mega-iframe');
-    if (iframeViejo) iframeViejo.remove();
-
-    posterInicial.style.display = 'none';
-
-    if (url.includes("mega.nz")) {
-        // LÓGICA PARA MEGA
-        videoElement.classList.add('hidden'); // Ocultamos el tag <video>
-        videoElement.pause();
-
-        const iframe = document.createElement('iframe');
-        iframe.id = 'mega-iframe';
-        // Convertimos el link de archivo a embed
-        iframe.src = url.replace("mega.nz/file/", "mega.nz/embed/");
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        iframe.style.border = "none";
-        iframe.allowFullscreen = true;
-        
-        container.appendChild(iframe);
-    } else {
-        // LÓGICA PARA DROPBOX / DIRECTOS
-        videoElement.classList.remove('hidden');
-        videoElement.src = url;
-        videoElement.play();
-    }
-}
     // --- 🟢 TU BIBLIOTECA ---
     const BIBLIOTECA = [
         {
@@ -56,6 +19,14 @@ function reproducirVideo(url) {
             url: "https://www.dropbox.com/scl/fi/sw2sccrl5n8x3f9gt7scf/Silicon.mp4?rlkey=al95uv95jkg4mh7zm7ohd9mv7&st=gsy9sm1i&raw=1"
         },
         {
+            titulo: "La Hermanastra Fea",
+            desc: "Doris, la regente de 'La Manzana Envenenada'. Una mujer que sabe lo que quiere y no acepta un 'no' por respuesta.",
+            anio: "2004",
+            imagen: "https://static.wikia.nocookie.net/shrek/images/3/39/Doris.jpg",
+            esSerie: false,
+            url: "https://mega.nz/file/j7ATBJAD#NJI8boHjfUO0KGLRh9h0LNy9c8sje0RbXHDhQkE8dXU"
+        },
+        {
             titulo: "Death Note",
             desc: "Un estudiante superdotado encuentra un cuaderno que le permite matar a cualquiera escribiendo su nombre.",
             anio: "2006",
@@ -67,36 +38,24 @@ function reproducirVideo(url) {
                 { nombre: "Cap 3: Negociación", url: "LINK_3" }
             ]
         }
-        {
-          titulo: "La Hermanastra Fea",
-          desc: "Doris, la hermanastra que regentea 'La Manzana Envenenada'. Una aliada inesperada que demuestra que no todas las villanas son lo que parecen, siempre con su estilo único y voz inconfundible.",
-          anio: "2004",
-          imagen: "https://cineplex.com.co/wp-content/uploads/2025/08/LaHermanastraFea_poster_web_cpxcol.jpg", // Imagen de Doris
-          esSerie: false,
-          url: "https://mega.nz/file/j7ATBJAD#NJI8boHjfUO0KGLRh9h0LNy9c8sje0RbXHDhQkE8dXU" 
-      },
     ];
 
-    // -------------------------------------
-
+    // --- ELEMENTOS DEL DOM ---
     const grid = document.getElementById('grid-peliculas');
     const reproductor = document.getElementById('reproductor');
     const posterInicial = document.getElementById('poster-inicial');
     const btnPlay = document.getElementById('btn-play-grande');
-    
-    // Elementos del Hero (Portada Gigante)
     const heroTitulo = document.getElementById('hero-titulo');
     const heroDesc = document.getElementById('hero-desc');
-    
     const zonaEpisodios = document.getElementById('zona-episodios');
     const listaCapitulos = document.getElementById('lista-capitulos');
 
-    // 1. CARGAR PRIMERA PELI POR DEFECTO (Para que no quede vacío al entrar)
+    // 1. CARGAR PRIMERA OPCIÓN POR DEFECTO
     if(BIBLIOTECA.length > 0) {
         cargarHero(BIBLIOTECA[0], false);
     }
 
-    // 2. GENERAR GRID
+    // 2. GENERAR EL GRID DE PELÍCULAS
     BIBLIOTECA.forEach((item) => {
         const card = document.createElement('div');
         card.className = 'movie-card';
@@ -114,46 +73,41 @@ function reproducirVideo(url) {
             </div>
         `;
 
-        card.onclick = () => cargarHero(item, true); // true = hacer scroll hacia arriba
+        card.onclick = () => cargarHero(item, true);
         grid.appendChild(card);
     });
 
-    // 3. FUNCIÓN PARA MOSTRAR LA INFO EN EL BANNER GIGANTE
+    // 3. CARGAR INFORMACIÓN EN EL BANNER PRINCIPAL
     function cargarHero(item, hacerScroll) {
-        // Poner la imagen de fondo en el banner grande
+        // Limpiar iframe de MEGA si quedó alguno de la peli anterior
+        const iframeExistente = document.getElementById('mega-iframe');
+        if (iframeExistente) iframeExistente.remove();
+
         posterInicial.style.backgroundImage = `url('${item.imagen}')`;
-        
-        // Actualizar textos
         heroTitulo.innerText = item.titulo;
         heroDesc.innerText = item.desc;
         
-        // Resetear estado del player
-        posterInicial.style.display = 'flex'; // Mostrar banner
-        reproductor.classList.add('hidden');  // Ocultar video
+        posterInicial.style.display = 'flex';
+        reproductor.classList.add('hidden');
         reproductor.pause();
+        reproductor.src = "";
 
         if(hacerScroll) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // LÓGICA SERIE VS PELI
         if (item.esSerie) {
-            // Es serie: Ocultar botón play, mostrar lista caps
             btnPlay.style.display = 'none';
             zonaEpisodios.classList.remove('hidden');
             renderizarEpisodios(item.episodios);
         } else {
-            // Es peli: Mostrar botón play, ocultar lista caps
             btnPlay.style.display = 'inline-flex';
             zonaEpisodios.classList.add('hidden');
-            
-            btnPlay.onclick = () => {
-                reproducirVideo(item.url);
-            };
+            btnPlay.onclick = () => reproducirVideo(item.url);
         }
     }
 
-    // 4. GENERAR BOTONES DE EPISODIOS
+    // 4. RENDERIZAR BOTONES DE EPISODIOS
     function renderizarEpisodios(lista) {
         listaCapitulos.innerHTML = "";
         lista.forEach(cap => {
@@ -169,16 +123,42 @@ function reproducirVideo(url) {
         });
     }
 
-    // 5. REPRODUCIR VIDEO
+    // 5. REPRODUCIR VIDEO (SOPORTA DROPBOX Y MEGA)
     function reproducirVideo(url) {
         if (!url || url.includes("LINK_")) {
             alert("⚠️ Link no disponible");
             return;
         }
-        posterInicial.style.display = 'none'; // Ocultar banner
-        reproductor.classList.remove('hidden'); // Mostrar video
-        reproductor.src = url;
-        reproductor.play();
-    }
 
+        const container = reproductor.parentElement;
+
+        // Eliminar iframe previo si existe
+        const iframeExistente = document.getElementById('mega-iframe');
+        if (iframeExistente) iframeExistente.remove();
+
+        posterInicial.style.display = 'none';
+
+        if (url.includes("mega.nz")) {
+            // Lógica para MEGA: Ocultamos el tag video y creamos un iframe
+            reproductor.classList.add('hidden');
+            reproductor.pause();
+
+            const iframe = document.createElement('iframe');
+            iframe.id = 'mega-iframe';
+            // Convertimos automáticamente /file/ en /embed/
+            iframe.src = url.replace("mega.nz/file/", "mega.nz/embed/");
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.minHeight = "450px";
+            iframe.style.border = "none";
+            iframe.allowFullscreen = true;
+            
+            container.appendChild(iframe);
+        } else {
+            // Lógica para Dropbox o archivos directos
+            reproductor.classList.remove('hidden');
+            reproductor.src = url;
+            reproductor.play().catch(e => console.error("Error al reproducir:", e));
+        }
+    }
 });
