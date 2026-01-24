@@ -1,5 +1,42 @@
 document.addEventListener("DOMContentLoaded", function() {
+// 5. REPRODUCIR VIDEO (Soporta MEGA y Directos)
+function reproducirVideo(url) {
+    if (!url || url.includes("LINK_")) {
+        alert("⚠️ Link no disponible");
+        return;
+    }
 
+    const videoElement = document.getElementById('reproductor');
+    const container = videoElement.parentElement; // El contenedor donde está el video
+
+    // 1. Eliminar iframe previo si existía de una peli anterior
+    const iframeViejo = document.getElementById('mega-iframe');
+    if (iframeViejo) iframeViejo.remove();
+
+    posterInicial.style.display = 'none';
+
+    if (url.includes("mega.nz")) {
+        // LÓGICA PARA MEGA
+        videoElement.classList.add('hidden'); // Ocultamos el tag <video>
+        videoElement.pause();
+
+        const iframe = document.createElement('iframe');
+        iframe.id = 'mega-iframe';
+        // Convertimos el link de archivo a embed
+        iframe.src = url.replace("mega.nz/file/", "mega.nz/embed/");
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
+        iframe.allowFullscreen = true;
+        
+        container.appendChild(iframe);
+    } else {
+        // LÓGICA PARA DROPBOX / DIRECTOS
+        videoElement.classList.remove('hidden');
+        videoElement.src = url;
+        videoElement.play();
+    }
+}
     // --- 🟢 TU BIBLIOTECA ---
     const BIBLIOTECA = [
         {
@@ -30,6 +67,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 { nombre: "Cap 3: Negociación", url: "LINK_3" }
             ]
         }
+        {
+          titulo: "La Hermanastra Fea",
+          desc: "Doris, la hermanastra que regentea 'La Manzana Envenenada'. Una aliada inesperada que demuestra que no todas las villanas son lo que parecen, siempre con su estilo único y voz inconfundible.",
+          anio: "2004",
+          imagen: "https://cineplex.com.co/wp-content/uploads/2025/08/LaHermanastraFea_poster_web_cpxcol.jpg", // Imagen de Doris
+          esSerie: false,
+          url: "https://mega.nz/file/j7ATBJAD#NJI8boHjfUO0KGLRh9h0LNy9c8sje0RbXHDhQkE8dXU" 
+      },
     ];
 
     // -------------------------------------
@@ -135,4 +180,5 @@ document.addEventListener("DOMContentLoaded", function() {
         reproductor.src = url;
         reproductor.play();
     }
+
 });
