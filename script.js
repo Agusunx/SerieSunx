@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             titulo: "La Hermanastra Fea",
-            desc: "Doris, la regente de 'La Manzana Envenenada'. Una mujer que sabe lo que quiere y no acepta un 'no' por respuesta.",
+            desc: "Doris, la regente de 'La Manzana Envenenada'. Una aliada inesperada con mucha personalidad.",
             anio: "2004",
             imagen: "https://static.wikia.nocookie.net/shrek/images/3/39/Doris.jpg",
             esSerie: false,
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             titulo: "Death Note",
-            desc: "Un estudiante superdotado encuentra un cuaderno que le permite matar a cualquiera escribiendo su nombre.",
+            desc: "Un estudiante encuentra un cuaderno que le permite matar a cualquiera escribiendo su nombre.",
             anio: "2006",
             imagen: "https://scontent.fepa4-1.fna.fbcdn.net/v/t39.30808-6/471669239_1174628054663065_2465406793693556236_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=OZB30El-lGgQ7kNvwHVDnLn&_nc_oc=AdnMDUpGRZxdtQFKqjb5h10PD1EUpqUdFzMLzEFTk8CbT0m_aGOZU5oGkz5b82hN_-g&_nc_zt=23&_nc_ht=scontent.fepa4-1.fna&_nc_gid=XTLOvppToyUmQR7a3UeyRA&oh=00_Afo2TNvriYcMJ5yvyjBtDbLHThxyNTLQZNgK_jVKpOdAmQ&oe=69678616",
             esSerie: true,
@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     ];
 
-    // --- ELEMENTOS DEL DOM ---
+    // --- ELEMENTOS ---
     const grid = document.getElementById('grid-peliculas');
-    const reproductor = document.getElementById('reproductor');
+    const videoHTML = document.getElementById('reproductor');
     const posterInicial = document.getElementById('poster-inicial');
     const btnPlay = document.getElementById('btn-play-grande');
     const heroTitulo = document.getElementById('hero-titulo');
@@ -50,51 +50,29 @@ document.addEventListener("DOMContentLoaded", function() {
     const zonaEpisodios = document.getElementById('zona-episodios');
     const listaCapitulos = document.getElementById('lista-capitulos');
 
-    // 1. CARGAR PRIMERA OPCIÓN POR DEFECTO
-    if(BIBLIOTECA.length > 0) {
-        cargarHero(BIBLIOTECA[0], false);
-    }
+    // Cargar portada por defecto
+    if(BIBLIOTECA.length > 0) cargarHero(BIBLIOTECA[0], false);
 
-    // 2. GENERAR EL GRID DE PELÍCULAS
+    // Generar Grid
     BIBLIOTECA.forEach((item) => {
         const card = document.createElement('div');
         card.className = 'movie-card';
-        
-        if(item.imagen) {
-            card.style.backgroundImage = `url('${item.imagen}')`;
-        } else {
-            card.style.background = '#333';
-        }
-
-        card.innerHTML = `
-            ${item.anio ? `<div class="year-badge">${item.anio}</div>` : ''}
-            <div class="card-content">
-                <div class="card-title">${item.titulo}</div>
-            </div>
-        `;
-
+        card.style.backgroundImage = `url('${item.imagen}')`;
+        card.innerHTML = `<div class="card-content"><div class="card-title">${item.titulo}</div></div>`;
         card.onclick = () => cargarHero(item, true);
         grid.appendChild(card);
     });
 
-    // 3. CARGAR INFORMACIÓN EN EL BANNER PRINCIPAL
     function cargarHero(item, hacerScroll) {
-        // Limpiar iframe de MEGA si quedó alguno de la peli anterior
-        const iframeExistente = document.getElementById('mega-iframe');
-        if (iframeExistente) iframeExistente.remove();
-
+        // Reset total del área de video
+        detenerYLimpiarVideo();
+        
         posterInicial.style.backgroundImage = `url('${item.imagen}')`;
         heroTitulo.innerText = item.titulo;
         heroDesc.innerText = item.desc;
-        
         posterInicial.style.display = 'flex';
-        reproductor.classList.add('hidden');
-        reproductor.pause();
-        reproductor.src = "";
 
-        if(hacerScroll) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        if(hacerScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
 
         if (item.esSerie) {
             btnPlay.style.display = 'none';
@@ -107,58 +85,56 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // 4. RENDERIZAR BOTONES DE EPISODIOS
     function renderizarEpisodios(lista) {
         listaCapitulos.innerHTML = "";
         lista.forEach(cap => {
             const btn = document.createElement('button');
             btn.className = 'episode-btn';
             btn.innerText = cap.nombre;
-            btn.onclick = () => {
-                document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('playing'));
-                btn.classList.add('playing');
-                reproducirVideo(cap.url);
-            };
+            btn.onclick = () => reproducirVideo(cap.url);
             listaCapitulos.appendChild(btn);
         });
     }
 
-    // 5. REPRODUCIR VIDEO (SOPORTA DROPBOX Y MEGA)
+    function detenerYLimpiarVideo() {
+        // Pausar video de Dropbox
+        videoHTML.pause();
+        videoHTML.src = "";
+        videoHTML.classList.add('hidden');
+        
+        // Eliminar cualquier iframe previo de MEGA
+        const iframeViejo = document.getElementById('mega-iframe');
+        if (iframeViejo) iframeViejo.remove();
+    }
+
     function reproducirVideo(url) {
-        if (!url || url.includes("LINK_")) {
-            alert("⚠️ Link no disponible");
-            return;
-        }
+        if (!url || url.includes("LINK_")) return alert("⚠️ Link no disponible");
 
-        const container = reproductor.parentElement;
-
-        // Eliminar iframe previo si existe
-        const iframeExistente = document.getElementById('mega-iframe');
-        if (iframeExistente) iframeExistente.remove();
-
+        detenerYLimpiarVideo();
         posterInicial.style.display = 'none';
 
         if (url.includes("mega.nz")) {
-            // Lógica para MEGA: Ocultamos el tag video y creamos un iframe
-            reproductor.classList.add('hidden');
-            reproductor.pause();
-
+            // LÓGICA MEGA: Crear Iframe con Sandbox para evitar redirección/descarga
             const iframe = document.createElement('iframe');
             iframe.id = 'mega-iframe';
-            // Convertimos automáticamente /file/ en /embed/
+            // IMPORTANTE: Cambiar /file/ por /embed/
             iframe.src = url.replace("mega.nz/file/", "mega.nz/embed/");
+            
+            // Atributos de seguridad y visualización
             iframe.style.width = "100%";
             iframe.style.height = "100%";
-            iframe.style.minHeight = "450px";
+            iframe.style.aspectRatio = "16/9";
             iframe.style.border = "none";
-            iframe.allowFullscreen = true;
-            
-            container.appendChild(iframe);
+            iframe.setAttribute('allowfullscreen', 'true');
+            // El sandbox permite que el video cargue pero bloquea que la página te saque de tu sitio
+            iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-presentation');
+
+            videoHTML.parentElement.appendChild(iframe);
         } else {
-            // Lógica para Dropbox o archivos directos
-            reproductor.classList.remove('hidden');
-            reproductor.src = url;
-            reproductor.play().catch(e => console.error("Error al reproducir:", e));
+            // LÓGICA DROPBOX
+            videoHTML.classList.remove('hidden');
+            videoHTML.src = url;
+            videoHTML.play();
         }
     }
 });
