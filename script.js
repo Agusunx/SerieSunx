@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- 🟢 TU BIBLIOTECA ---
     const BIBLIOTECA = [
         {
             titulo: "Ao Haru Ride", 
@@ -66,9 +65,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // MUESTRA EL INICIO (PANORAMA GENERAL)
     function mostrarHome() {
         posterInicial.style.backgroundImage = "url('https://i.imgur.com/Ly4FH3A.png')";
-       
+        heroTitulo.innerText = "¡Bienvenido a SerieSunx!"; // Agregado para que no esté vacío
         heroDesc.innerText = "Seleccioná una película o serie de la cartelera para comenzar.";
-        btnPlay.classList.add('hidden');
+        
+        btnPlay.style.display = 'none'; // Usamos display directo para evitar fallos de clase
         zonaEpisodios.classList.add('hidden');
         reproductor.classList.add('hidden');
         limpiarReproductor();
@@ -102,11 +102,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if(hacerScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
 
         if (item.esSerie) {
-            btnPlay.classList.add('hidden');
+            btnPlay.style.display = 'none'; // Ocultar en series
             zonaEpisodios.classList.remove('hidden');
             renderizarEpisodios(item.episodios);
         } else {
-            btnPlay.classList.remove('hidden');
+            btnPlay.style.display = 'flex'; // Mostrar en películas
             zonaEpisodios.classList.add('hidden');
             btnPlay.onclick = () => reproducirVideo(item.url);
         }
@@ -151,12 +151,10 @@ document.addEventListener("DOMContentLoaded", function() {
             iframe.allowFullscreen = true;
             reproductor.parentElement.appendChild(iframe);
         } else {
-            // PARA DROPBOX (RED SOCIAL / SILICON VALLEY)
             reproductor.classList.remove('hidden');
             reproductor.src = url;
-            reproductor.load(); // Asegura la carga del nuevo archivo
+            reproductor.load(); 
             reproductor.play().catch(e => console.log("Play bloqueado:", e));
         }
     }
 });
-
