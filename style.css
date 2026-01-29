@@ -199,4 +199,13 @@ nav {
 .hidden {
     display: none !important;
 }
+#hero-desc {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #ddd;
+    /* Ajusta este valor para bajarlo más o menos */
+    margin-top: 25px; 
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
 
