@@ -62,13 +62,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const zonaEpisodios = document.getElementById('zona-episodios');
     const listaCapitulos = document.getElementById('lista-capitulos');
 
-    // MUESTRA EL INICIO (PANORAMA GENERAL)
     function mostrarHome() {
         posterInicial.style.backgroundImage = "url('https://i.imgur.com/Ly4FH3A.png')";
-        heroTitulo.innerText = "¡Bienvenido a SerieSunx!"; // Agregado para que no esté vacío
+        heroTitulo.innerText = "¡Bienvenido a SerieSunx!";
         heroDesc.innerText = "Seleccioná una película o serie de la cartelera para comenzar.";
         
-        btnPlay.style.display = 'none'; // Usamos display directo para evitar fallos de clase
+        btnPlay.style.display = 'none'; // Asegura que el botón no se vea al inicio
         zonaEpisodios.classList.add('hidden');
         reproductor.classList.add('hidden');
         limpiarReproductor();
@@ -76,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     mostrarHome();
 
-    // GENERAR CARTELERA
+    // GENERAR CARTELERA (Asegúrate de que el ID sea 'grid-peliculas')
     BIBLIOTECA.forEach((item) => {
         const card = document.createElement('div');
         card.className = 'movie-card';
@@ -96,17 +95,18 @@ document.addEventListener("DOMContentLoaded", function() {
         heroTitulo.innerText = item.titulo;
         heroDesc.innerText = item.desc;
         limpiarReproductor();
+        
         posterInicial.style.display = 'flex'; 
         reproductor.classList.add('hidden');  
 
         if(hacerScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
 
         if (item.esSerie) {
-            btnPlay.style.display = 'none'; // Ocultar en series
+            btnPlay.style.display = 'none'; 
             zonaEpisodios.classList.remove('hidden');
             renderizarEpisodios(item.episodios);
         } else {
-            btnPlay.style.display = 'flex'; // Mostrar en películas
+            btnPlay.style.display = 'flex'; // Forzamos el display flex para el botón
             zonaEpisodios.classList.add('hidden');
             btnPlay.onclick = () => reproducirVideo(item.url);
         }
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             reproductor.classList.remove('hidden');
             reproductor.src = url;
-            reproductor.load(); 
+            reproductor.load();
             reproductor.play().catch(e => console.log("Play bloqueado:", e));
         }
     }
