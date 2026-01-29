@@ -66,9 +66,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // --- 1. FUNCIÓN PARA MOSTRAR ESTADO INICIAL (PANORAMA GENERAL) ---
     function mostrarHome() {
         // Podés cambiar el link de abajo por cualquier imagen de fondo que te guste para el inicio
-        posterInicial.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://imgur.com/a/seb3wvx')";
-        heroTitulo.innerText = "¡Bienvenido a tu Streaming!";
-        heroDesc.innerText = "Seleccioná una película o serie de la cartelera para comenzar.";
+        posterInicial.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://i.imgur.com/Ly4FH3A.png')";
+        heroTitulo.innerText = "¡Bienvenido!";
+        heroDesc.innerText = "Seleccioná una película o serie para comenzar.";
         
         btnPlay.style.display = 'none';
         zonaEpisodios.classList.add('hidden');
@@ -172,5 +172,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
