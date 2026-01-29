@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
             titulo: "Death Note",
             desc: "Un estudiante superdotado encuentra un cuaderno que le permite matar a cualquiera escribiendo su nombre.",
             anio: "2006",
-            imagen: "https://scontent.fepa4-1.fna.fbcdn.net/v/t39.30808-6/471669239_1174628054663065_2465406793693556236_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=OZB30El-lGgQ7kNvwHVDnLn&_nc_oc=AdnMDUpGRZxdtQFKqjb5h10PD1EUpqUdFzMLzEFTk8CbT0m_aGOZU5oGkz5b82hN_-g&_nc_zt=23&_nc_ht=scontent.fepa4-1.fna&_nc_gid=XTLOvppToyUmQR7a3UeyRA&oh=00_Afo2TNvriYcMJ5yvyjBtDbLHThxyNTLQZNgK_jVKpOdAmQ&oe=69678616",
+            imagen: "https://i1.whakoom.com/large/1b/23/f9fa310874944386bee15beb23990b6f.jpg",
             esSerie: true,
             episodios: [
                 { nombre: "Cap 1: Renacimiento", url: "https://www.yourupload.com/embed/C25TFyQ5pnNs"},
@@ -160,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
