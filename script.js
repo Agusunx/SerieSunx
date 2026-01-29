@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // --- 🟢 TU BIBLIOTECA (Actualizada con la serie de Flo) ---
     const BIBLIOTECA = [
         {
-            titulo: "Serie para Flo", 
-            desc: "Capítulo especial para ver juntos.",
+            titulo: "Ao Haru Ride ", 
+            desc: "Capítulo 1.",
             anio: "2026",
             imagen: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop", // Puedes cambiar esta imagen
             esSerie: true,
@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     nombre: "Capítulo 1", 
                     url: "https://mega.nz/embed/hskljSDK#6foU1oDZ58gGQrpZecvSPjPRDazM99N7F6stPcln6nw" 
                 }
+                    nombre: "Capitulo 2",
+                    url: "https://mega.nz/embed/I4lCUA4K#BOu959iGXGAzcSGA-LgZuUil8RWli75XU5f8FMGaWyk"
             ]
         },
         {
@@ -170,3 +172,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
