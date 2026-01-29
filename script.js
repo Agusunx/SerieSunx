@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const BIBLIOTECA = [
         {
             titulo: "Ao Haru Ride ", 
-            desc: "Capítulo 1.",
+            desc: "desc: "Futaba se reencuentra con Kou, su primer amor de la infancia, solo para descubrir que él ha cambiado por completo. Una historia sobre segundas oportunidades y el primer amor.",",
             anio: "2026",
-            imagen: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop", // Puedes cambiar esta imagen
+            imagen: "https://static.wikia.nocookie.net/manga/images/6/6e/Ao_Haru_Ride.jpg/revision/latest?cb=20140625003307&path-prefix=es", // Puedes cambiar esta imagen
             esSerie: true,
             episodios: [
                 { 
@@ -16,7 +16,52 @@ document.addEventListener("DOMContentLoaded", function() {
                 { 
                     nombre: "Capitulo 2",
                     url: "https://mega.nz/embed/I4lCUA4K#BOu959iGXGAzcSGA-LgZuUil8RWli75XU5f8FMGaWyk"
-                 }
+                 },
+                 { 
+                    nombre: "Capítulo 3", 
+                    url: "https://mega.nz/embed/gwdBXACY#XrKk2u-JyGoj4Lx65U3fM_qj-ByW3GXP823cYhPLZhM" 
+                },
+                 { 
+                    nombre: "Capítulo 4", 
+                    url: "https://mega.nz/embed/551QBSJa#ab0f2acCnuch8S95zb777sDvg8glomFENdkfqKO1ps" 
+                },
+                 { 
+                    nombre: "Capítulo 5", 
+                    url: "https://www.yourupload.com/embed/jS842f0ggK3V" 
+                },
+                 { 
+                    nombre: "Capítulo 6", 
+                    url: "https://www.yourupload.com/embed/OL1kS88JBYgn" 
+                },
+                 { 
+                    nombre: "Capítulo 7", 
+                    url: "https://www.yourupload.com/embed/EePwowpU1odj" 
+                },
+                 { 
+                    nombre: "Capítulo 8", 
+                    url: "https://mega.nz/embed/r0tiDCaY#5DPYENqgbGuzrbNIQs2ya8T6MUDD9fhmtp4EnQSpf_I" 
+                },
+                 { 
+                    nombre: "Capítulo 9", 
+                    url: "https://www.yourupload.com/embed/Gjep1kQqs2he" 
+                },
+                { 
+                    nombre: "Capitulo 10",
+                    utl: "https://mega.nz/embed/X4lAwIxT#XH91ZiaUy_BEhESnP47hE-yUD0Ui-awwOSqao5pPp3"
+                },
+                  { 
+                    nombre: "Capítulo 11", 
+                    url: "https://www.yourupload.com/embed/KMrb2S0t8rqR" 
+                },
+                  { 
+                    nombre: "Capítulo 12", 
+                    url: "https://www.yourupload.com/embed/2UJ6TDUy4atg" 
+                },
+                  { 
+                    nombre: "Capítulo 13", 
+                    url: "https://www.yourupload.com/embed/lA2u8F7BBO8o" 
+                },
+                
             ]
         },
         {
@@ -174,6 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
