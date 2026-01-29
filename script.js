@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // MUESTRA EL INICIO (PANORAMA GENERAL)
     function mostrarHome() {
         posterInicial.style.backgroundImage = "url('https://i.imgur.com/Ly4FH3A.png')";
-        heroTitulo.innerText = "¡Bienvenido a SerieSunx!";
+       
         heroDesc.innerText = "Seleccioná una película o serie de la cartelera para comenzar.";
         btnPlay.classList.add('hidden');
         zonaEpisodios.classList.add('hidden');
@@ -159,3 +159,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
