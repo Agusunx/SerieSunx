@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- 🟢 TU BIBLIOTECA ---
+    // --- 🟢 TU BIBLIOTECA (Tal cual la tenés ahora) ---
     const BIBLIOTECA = [
         {
             titulo: "Ao Haru Ride", 
@@ -63,10 +63,23 @@ document.addEventListener("DOMContentLoaded", function() {
     const zonaEpisodios = document.getElementById('zona-episodios');
     const listaCapitulos = document.getElementById('lista-capitulos');
 
-    if(BIBLIOTECA.length > 0) {
-        cargarHero(BIBLIOTECA[0], false);
+    // --- 1. FUNCIÓN PARA MOSTRAR ESTADO INICIAL (PANORAMA GENERAL) ---
+    function mostrarHome() {
+        // Podés cambiar el link de abajo por cualquier imagen de fondo que te guste para el inicio
+        posterInicial.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop')";
+        heroTitulo.innerText = "¡Bienvenido a tu Streaming!";
+        heroDesc.innerText = "Seleccioná una película o serie de la cartelera para comenzar.";
+        
+        btnPlay.style.display = 'none';
+        zonaEpisodios.classList.add('hidden');
+        reproductor.classList.add('hidden');
+        limpiarReproductor();
     }
 
+    // Ejecutamos el inicio
+    mostrarHome();
+
+    // --- 2. GENERAR GRID ---
     BIBLIOTECA.forEach((item) => {
         const card = document.createElement('div');
         card.className = 'movie-card';
@@ -81,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
         grid.appendChild(card);
     });
 
+    // --- 3. CARGAR SELECCIÓN EN EL HERO ---
     function cargarHero(item, hacerScroll) {
         posterInicial.style.backgroundImage = `url('${item.imagen}')`;
         heroTitulo.innerText = item.titulo;
@@ -137,7 +151,6 @@ document.addEventListener("DOMContentLoaded", function() {
         limpiarReproductor();
         posterInicial.style.display = 'none'; 
 
-        // Detectar si el link requiere IFRAME (MEGA o YourUpload)
         if (url.includes("mega.nz/embed") || url.includes("yourupload.com/embed")) {
             reproductor.classList.add('hidden');
             reproductor.pause();
@@ -153,14 +166,9 @@ document.addEventListener("DOMContentLoaded", function() {
             
             contenedorPadre.appendChild(iframe);
         } else {
-            // Archivos directos (Dropbox / MP4)
             reproductor.classList.remove('hidden');
             reproductor.src = url;
             reproductor.play().catch(e => console.log("Auto-play prevenido: ", e));
         }
     }
 });
-
-
-
-
