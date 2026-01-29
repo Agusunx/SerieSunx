@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
             titulo: "Ao Haru Ride", 
             desc: "Futaba se reencuentra con Kou, su primer amor de la infancia, solo para descubrir que él ha cambiado por completo. Una historia sobre segundas oportunidades y el primer amor.",
             anio: "2026",
-            imagen: "https://static.wikia.nocookie.net/manga/images/6/6e/Ao_Haru_Ride.jpg/revision/latest?cb=20140625003307&path-prefix=es",
+            imagen: "https://m.media-amazon.com/images/M/MV5BMzNmNjQ3OTEtMjIzOS00ZDg2LWEwMTYtMzk1ZWEzNGFiMzVkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
             esSerie: true,
             episodios: [
                 { nombre: "Capítulo 1", url: "https://mega.nz/embed/hskljSDK#6foU1oDZ58gGQrpZecvSPjPRDazM99N7F6stPcln6nw" },
@@ -160,3 +160,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
