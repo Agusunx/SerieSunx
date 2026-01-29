@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const BIBLIOTECA = [
         {
             titulo: "Ao Haru Ride ", 
-            desc: "desc: "Futaba se reencuentra con Kou, su primer amor de la infancia, solo para descubrir que él ha cambiado por completo. Una historia sobre segundas oportunidades y el primer amor.",",
+            desc: "Futaba se reencuentra con Kou, su primer amor de la infancia, solo para descubrir que él ha cambiado por completo. Una historia sobre segundas oportunidades y el primer amor.",
             anio: "2026",
             imagen: "https://static.wikia.nocookie.net/manga/images/6/6e/Ao_Haru_Ride.jpg/revision/latest?cb=20140625003307&path-prefix=es", // Puedes cambiar esta imagen
             esSerie: true,
@@ -219,6 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
