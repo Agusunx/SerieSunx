@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    // --- 🟢 TU BIBLIOTECA ---
     const BIBLIOTECA = [
         {
             titulo: "Ao Haru Ride", 
@@ -29,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
             anio: "2010",
             imagen: "https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/90016aaa-2f1d-40d8-b214-2de30bccc99a/08f7e552360f80efa0cd86d5f8b197e4e53d080f.jpg?host=wbd-images.prod-vod.h264.io&partner=beamcom",
             esSerie: false,
-            // IMPORTANTE: El link debe terminar en &raw=1 para que funcione el tag <video>
             url: "https://www.dropbox.com/scl/fi/ki8wkec3iy1eec8snyt97/RedSocial.mp4?rlkey=q0o5i78amtl70sdmsn9hgza2t&st=bwjp2q9v&raw=1"
         },
         {
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // MUESTRA EL INICIO (PANORAMA GENERAL)
     function mostrarHome() {
-        posterInicial.style.backgroundImage = url('https://i.imgur.com/Ly4FH3A.png')";
+        posterInicial.style.backgroundImage = "url('https://i.imgur.com/Ly4FH3A.png')";
         heroTitulo.innerText = "¡Bienvenido a SerieSunx!";
         heroDesc.innerText = "Seleccioná una película o serie de la cartelera para comenzar.";
         btnPlay.classList.add('hidden');
@@ -159,6 +159,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
-
-
-
