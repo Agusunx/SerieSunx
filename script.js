@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- 🟢 TU BIBLIOTECA (Tal cual la tenés ahora) ---
     const BIBLIOTECA = [
         {
             titulo: "Ao Haru Ride", 
-            desc: "Futaba se reencuentra con Kou, su primer amor de la infancia, solo para descubrir que él ha cambiado por completo. Una historia sobre segundas oportunidades y el primer amor.",
+            desc: "Futaba se reencuentra con Kou, su primer amor de la infancia, solo para descubrir que él ha cambiado por completo.",
             anio: "2026",
             imagen: "https://m.media-amazon.com/images/M/MV5BMzNmNjQ3OTEtMjIzOS00ZDg2LWEwMTYtMzk1ZWEzNGFiMzVkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
             esSerie: true,
@@ -30,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
             anio: "2010",
             imagen: "https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/90016aaa-2f1d-40d8-b214-2de30bccc99a/08f7e552360f80efa0cd86d5f8b197e4e53d080f.jpg?host=wbd-images.prod-vod.h264.io&partner=beamcom",
             esSerie: false,
+            // IMPORTANTE: El link debe terminar en &raw=1 para que funcione el tag <video>
             url: "https://www.dropbox.com/scl/fi/ki8wkec3iy1eec8snyt97/RedSocial.mp4?rlkey=q0o5i78amtl70sdmsn9hgza2t&st=bwjp2q9v&raw=1"
         },
         {
@@ -63,27 +63,24 @@ document.addEventListener("DOMContentLoaded", function() {
     const zonaEpisodios = document.getElementById('zona-episodios');
     const listaCapitulos = document.getElementById('lista-capitulos');
 
-    // --- 1. FUNCIÓN PARA MOSTRAR ESTADO INICIAL (PANORAMA GENERAL) ---
+    // MUESTRA EL INICIO (PANORAMA GENERAL)
     function mostrarHome() {
-        // Podés cambiar el link de abajo por cualquier imagen de fondo que te guste para el inicio
-        posterInicial.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://i.imgur.com/Ly4FH3A.png')";
-        heroTitulo.innerText = "¡Bienvenido!";
-        heroDesc.innerText = "Seleccioná una película o serie para comenzar.";
-        
-        btnPlay.style.display = 'none';
+        posterInicial.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2000&auto=format&fit=crop')";
+        heroTitulo.innerText = "¡Bienvenido a SerieSunx!";
+        heroDesc.innerText = "Seleccioná una película o serie de la cartelera para comenzar.";
+        btnPlay.classList.add('hidden');
         zonaEpisodios.classList.add('hidden');
         reproductor.classList.add('hidden');
         limpiarReproductor();
     }
 
-    // Ejecutamos el inicio
     mostrarHome();
 
-    // --- 2. GENERAR GRID ---
+    // GENERAR CARTELERA
     BIBLIOTECA.forEach((item) => {
         const card = document.createElement('div');
         card.className = 'movie-card';
-        card.style.backgroundImage = item.imagen ? `url('${item.imagen}')` : '';
+        card.style.backgroundImage = `url('${item.imagen}')`;
         card.innerHTML = `
             ${item.anio ? `<div class="year-badge">${item.anio}</div>` : ''}
             <div class="card-content">
@@ -94,28 +91,22 @@ document.addEventListener("DOMContentLoaded", function() {
         grid.appendChild(card);
     });
 
-    // --- 3. CARGAR SELECCIÓN EN EL HERO ---
     function cargarHero(item, hacerScroll) {
         posterInicial.style.backgroundImage = `url('${item.imagen}')`;
         heroTitulo.innerText = item.titulo;
         heroDesc.innerText = item.desc;
-        
         limpiarReproductor();
-
         posterInicial.style.display = 'flex'; 
         reproductor.classList.add('hidden');  
-        reproductor.pause();
 
-        if(hacerScroll) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        if(hacerScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
 
         if (item.esSerie) {
-            btnPlay.style.display = 'none';
+            btnPlay.classList.add('hidden');
             zonaEpisodios.classList.remove('hidden');
             renderizarEpisodios(item.episodios);
         } else {
-            btnPlay.style.display = 'inline-flex';
+            btnPlay.classList.remove('hidden');
             zonaEpisodios.classList.add('hidden');
             btnPlay.onclick = () => reproducirVideo(item.url);
         }
@@ -139,22 +130,17 @@ document.addEventListener("DOMContentLoaded", function() {
     function limpiarReproductor() {
         const iframeViejo = document.getElementById('iframe-externo');
         if (iframeViejo) iframeViejo.remove();
+        reproductor.pause();
+        reproductor.src = "";
     }
 
     function reproducirVideo(url) {
-        if (!url || url.includes("LINK_")) {
-            alert("⚠️ Link no disponible");
-            return;
-        }
-
-        const contenedorPadre = reproductor.parentElement;
+        if (!url) return;
         limpiarReproductor();
         posterInicial.style.display = 'none'; 
 
         if (url.includes("mega.nz/embed") || url.includes("yourupload.com/embed")) {
             reproductor.classList.add('hidden');
-            reproductor.pause();
-
             const iframe = document.createElement('iframe');
             iframe.id = 'iframe-externo';
             iframe.src = url;
@@ -163,22 +149,15 @@ document.addEventListener("DOMContentLoaded", function() {
             iframe.style.aspectRatio = "16/9";
             iframe.frameBorder = "0";
             iframe.allowFullscreen = true;
-            
-            contenedorPadre.appendChild(iframe);
+            reproductor.parentElement.appendChild(iframe);
         } else {
+            // PARA DROPBOX (RED SOCIAL / SILICON VALLEY)
             reproductor.classList.remove('hidden');
             reproductor.src = url;
-            reproductor.play().catch(e => console.log("Auto-play prevenido: ", e));
+            reproductor.load(); // Asegura la carga del nuevo archivo
+            reproductor.play().catch(e => console.log("Play bloqueado:", e));
         }
     }
-    function mostrarHome() {
-    posterInicial.style.backgroundImage = "url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2000&auto=format&fit=crop')";
-    heroTitulo.innerText = "¡Bienvenido a SerieSunx!";
-    heroDesc.innerText = "Tu biblioteca personal de películas y series. Seleccioná un título abajo para empezar.";
-    // ... resto del código
-}
 });
-
-
 
 
