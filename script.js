@@ -1,67 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- 🟢 TU BIBLIOTECA (Actualizada con la serie de Flo) ---
+    // --- 🟢 TU BIBLIOTECA ---
     const BIBLIOTECA = [
         {
-            titulo: "Ao Haru Ride ", 
+            titulo: "Ao Haru Ride", 
             desc: "Futaba se reencuentra con Kou, su primer amor de la infancia, solo para descubrir que él ha cambiado por completo. Una historia sobre segundas oportunidades y el primer amor.",
             anio: "2026",
-            imagen: "https://static.wikia.nocookie.net/manga/images/6/6e/Ao_Haru_Ride.jpg/revision/latest?cb=20140625003307&path-prefix=es", // Puedes cambiar esta imagen
+            imagen: "https://static.wikia.nocookie.net/manga/images/6/6e/Ao_Haru_Ride.jpg/revision/latest?cb=20140625003307&path-prefix=es",
             esSerie: true,
             episodios: [
-                { 
-                    nombre: "Capítulo 1", 
-                    url: "https://mega.nz/embed/hskljSDK#6foU1oDZ58gGQrpZecvSPjPRDazM99N7F6stPcln6nw" 
-                },
-                { 
-                    nombre: "Capitulo 2",
-                    url: "https://mega.nz/embed/I4lCUA4K#BOu959iGXGAzcSGA-LgZuUil8RWli75XU5f8FMGaWyk"
-                 },
-                 { 
-                    nombre: "Capítulo 3", 
-                    url: "https://mega.nz/embed/gwdBXACY#XrKk2u-JyGoj4Lx65U3fM_qj-ByW3GXP823cYhPLZhM" 
-                },
-                 { 
-                    nombre: "Capítulo 4", 
-                    url: "https://mega.nz/embed/551QBSJa#ab0f2acCnuch8S95zb777sDvg8glomFENdkfqKO1ps" 
-                },
-                 { 
-                    nombre: "Capítulo 5", 
-                    url: "https://www.yourupload.com/embed/jS842f0ggK3V" 
-                },
-                 { 
-                    nombre: "Capítulo 6", 
-                    url: "https://www.yourupload.com/embed/OL1kS88JBYgn" 
-                },
-                 { 
-                    nombre: "Capítulo 7", 
-                    url: "https://www.yourupload.com/embed/EePwowpU1odj" 
-                },
-                 { 
-                    nombre: "Capítulo 8", 
-                    url: "https://mega.nz/embed/r0tiDCaY#5DPYENqgbGuzrbNIQs2ya8T6MUDD9fhmtp4EnQSpf_I" 
-                },
-                 { 
-                    nombre: "Capítulo 9", 
-                    url: "https://www.yourupload.com/embed/Gjep1kQqs2he" 
-                },
-                { 
-                    nombre: "Capitulo 10",
-                    utl: "https://mega.nz/embed/X4lAwIxT#XH91ZiaUy_BEhESnP47hE-yUD0Ui-awwOSqao5pPp3"
-                },
-                  { 
-                    nombre: "Capítulo 11", 
-                    url: "https://www.yourupload.com/embed/KMrb2S0t8rqR" 
-                },
-                  { 
-                    nombre: "Capítulo 12", 
-                    url: "https://www.yourupload.com/embed/2UJ6TDUy4atg" 
-                },
-                  { 
-                    nombre: "Capítulo 13", 
-                    url: "https://www.yourupload.com/embed/lA2u8F7BBO8o" 
-                },
-                
+                { nombre: "Capítulo 1", url: "https://mega.nz/embed/hskljSDK#6foU1oDZ58gGQrpZecvSPjPRDazM99N7F6stPcln6nw" },
+                { nombre: "Capítulo 2", url: "https://mega.nz/embed/I4lCUA4K#BOu959iGXGAzcSGA-LgZuUil8RWli75XU5f8FMGaWyk" },
+                { nombre: "Capítulo 3", url: "https://mega.nz/embed/gwdBXACY#XrKk2u-JyGoj4Lx65U3fM_qj-ByW3GXP823cYhPLZhM" },
+                { nombre: "Capítulo 4", url: "https://mega.nz/embed/551QBSJa#ab0f2acCnuch8S95zb777sDvg8glomFENdkfqKO1ps" },
+                { nombre: "Capítulo 5", url: "https://www.yourupload.com/embed/jS842f0ggK3V" },
+                { nombre: "Capítulo 6", url: "https://www.yourupload.com/embed/OL1kS88JBYgn" },
+                { nombre: "Capítulo 7", url: "https://www.yourupload.com/embed/EePwowpU1odj" },
+                { nombre: "Capítulo 8", url: "https://mega.nz/embed/r0tiDCaY#5DPYENqgbGuzrbNIQs2ya8T6MUDD9fhmtp4EnQSpf_I" },
+                { nombre: "Capítulo 9", url: "https://www.yourupload.com/embed/Gjep1kQqs2he" },
+                { nombre: "Capítulo 10", url: "https://mega.nz/embed/X4lAwIxT#XH91ZiaUy_BEhESnP47hE-yUD0Ui-awwOSqao5pPp3" },
+                { nombre: "Capítulo 11", url: "https://www.yourupload.com/embed/KMrb2S0t8rqR" },
+                { nombre: "Capítulo 12", url: "https://www.yourupload.com/embed/2UJ6TDUy4atg" },
+                { nombre: "Capítulo 13", url: "https://www.yourupload.com/embed/lA2u8F7BBO8o" }
             ]
         },
         {
@@ -94,55 +54,39 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     ];
 
-    // -------------------------------------
-
     const grid = document.getElementById('grid-peliculas');
     const reproductor = document.getElementById('reproductor');
     const posterInicial = document.getElementById('poster-inicial');
     const btnPlay = document.getElementById('btn-play-grande');
-    
     const heroTitulo = document.getElementById('hero-titulo');
     const heroDesc = document.getElementById('hero-desc');
-    
     const zonaEpisodios = document.getElementById('zona-episodios');
     const listaCapitulos = document.getElementById('lista-capitulos');
 
-    // 1. CARGAR PRIMERA PELI POR DEFECTO
     if(BIBLIOTECA.length > 0) {
         cargarHero(BIBLIOTECA[0], false);
     }
 
-    // 2. GENERAR GRID
     BIBLIOTECA.forEach((item) => {
         const card = document.createElement('div');
         card.className = 'movie-card';
-        
-        if(item.imagen) {
-            card.style.backgroundImage = `url('${item.imagen}')`;
-        } else {
-            card.style.background = '#333';
-        }
-
+        card.style.backgroundImage = item.imagen ? `url('${item.imagen}')` : '';
         card.innerHTML = `
             ${item.anio ? `<div class="year-badge">${item.anio}</div>` : ''}
             <div class="card-content">
                 <div class="card-title">${item.titulo}</div>
             </div>
         `;
-
         card.onclick = () => cargarHero(item, true);
         grid.appendChild(card);
     });
 
-    // 3. FUNCIÓN PARA MOSTRAR LA INFO EN EL BANNER GIGANTE
     function cargarHero(item, hacerScroll) {
         posterInicial.style.backgroundImage = `url('${item.imagen}')`;
         heroTitulo.innerText = item.titulo;
         heroDesc.innerText = item.desc;
         
-        // Resetear estado del player y quitar iframe si existía
-        const iframeViejo = document.getElementById('iframe-mega');
-        if (iframeViejo) iframeViejo.remove();
+        limpiarReproductor();
 
         posterInicial.style.display = 'flex'; 
         reproductor.classList.add('hidden');  
@@ -159,14 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             btnPlay.style.display = 'inline-flex';
             zonaEpisodios.classList.add('hidden');
-            
-            btnPlay.onclick = () => {
-                reproducirVideo(item.url);
-            };
+            btnPlay.onclick = () => reproducirVideo(item.url);
         }
     }
 
-    // 4. GENERAR BOTONES DE EPISODIOS
     function renderizarEpisodios(lista) {
         listaCapitulos.innerHTML = "";
         lista.forEach(cap => {
@@ -182,7 +122,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 5. REPRODUCIR VIDEO (SOPORTA DROPBOX Y MEGA)
+    function limpiarReproductor() {
+        const iframeViejo = document.getElementById('iframe-externo');
+        if (iframeViejo) iframeViejo.remove();
+    }
+
     function reproducirVideo(url) {
         if (!url || url.includes("LINK_")) {
             alert("⚠️ Link no disponible");
@@ -190,37 +134,29 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         const contenedorPadre = reproductor.parentElement;
+        limpiarReproductor();
         posterInicial.style.display = 'none'; 
 
-        // Eliminar iframe previo si existe
-        const iframeViejo = document.getElementById('iframe-mega');
-        if (iframeViejo) iframeViejo.remove();
-
-        if (url.includes("mega.nz/embed")) {
-            // Lógica para MEGA
+        // Detectar si el link requiere IFRAME (MEGA o YourUpload)
+        if (url.includes("mega.nz/embed") || url.includes("yourupload.com/embed")) {
             reproductor.classList.add('hidden');
             reproductor.pause();
 
             const iframe = document.createElement('iframe');
-            iframe.id = 'iframe-mega';
+            iframe.id = 'iframe-externo';
             iframe.src = url;
             iframe.width = "100%";
             iframe.height = "100%";
-            iframe.style.aspectRatio = "16/9"; // Mantiene la forma
+            iframe.style.aspectRatio = "16/9";
             iframe.frameBorder = "0";
             iframe.allowFullscreen = true;
             
             contenedorPadre.appendChild(iframe);
         } else {
-            // Lógica para Dropbox / Directo
+            // Archivos directos (Dropbox / MP4)
             reproductor.classList.remove('hidden');
             reproductor.src = url;
-            reproductor.play().catch(e => console.log("Error al reproducir: ", e));
+            reproductor.play().catch(e => console.log("Auto-play prevenido: ", e));
         }
     }
 });
-
-
-
-
-
