@@ -13,8 +13,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     nombre: "Capítulo 1", 
                     url: "https://mega.nz/embed/hskljSDK#6foU1oDZ58gGQrpZecvSPjPRDazM99N7F6stPcln6nw" 
                 }
+                { 
                     nombre: "Capitulo 2",
                     url: "https://mega.nz/embed/I4lCUA4K#BOu959iGXGAzcSGA-LgZuUil8RWli75XU5f8FMGaWyk"
+                 }
             ]
         },
         {
@@ -172,4 +174,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
