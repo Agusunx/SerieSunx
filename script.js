@@ -171,7 +171,14 @@ document.addEventListener("DOMContentLoaded", function() {
             reproductor.play().catch(e => console.log("Auto-play prevenido: ", e));
         }
     }
+    function mostrarHome() {
+    posterInicial.style.backgroundImage = "url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2000&auto=format&fit=crop')";
+    heroTitulo.innerText = "¡Bienvenido a SerieSunx!";
+    heroDesc.innerText = "Tu biblioteca personal de películas y series. Seleccioná un título abajo para empezar.";
+    // ... resto del código
+}
 });
+
 
 
 
