@@ -1,4 +1,4 @@
-/* --- RESET GENERAL --- */
+/* --- RESET Y ESTILOS BASE --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #141414;
+    background-color: #141414; /* Negro sólido de fondo */
     color: white;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
@@ -23,18 +23,21 @@ nav {
 }
 
 .logo {
-    color: #e50914;
+    color: #e50914; /* Rojo temático */
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-/* --- HERO (BANNER) --- */
+.logo span {
+    color: white;
+}
+
+/* --- HERO (BANNER PRINCIPAL) --- */
 #poster-inicial {
     position: relative;
-    min-height: 85vh; 
+    min-height: 85vh; /* Altura suficiente para que el fondo se vea */
     width: 100%;
     background-size: cover;
     background-position: center center;
@@ -43,15 +46,24 @@ nav {
     display: flex;
     align-items: center;
     padding: 0 5%;
+    overflow: hidden;
     z-index: 1;
 }
 
+/* Capa de ajuste para legibilidad del texto */
 #poster-inicial::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to right, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.4) 50%, transparent 100%),
-                linear-gradient(to top, #141414 5%, transparent 20%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente oscuro a la izquierda para el texto */
+    background: linear-gradient(to right, 
+        rgba(0,0,0,0.85) 20%, 
+        rgba(0,0,0,0.4) 50%, 
+        transparent 100%),
+    linear-gradient(to top, #141414 5%, transparent 20%);
     z-index: 2;
 }
 
@@ -59,7 +71,9 @@ nav {
     position: relative;
     z-index: 10; 
     max-width: 700px;
-    margin-top: 80px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 #hero-titulo {
@@ -72,14 +86,15 @@ nav {
 #hero-desc {
     font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: #ddd;
-    /* REDUCIDO: 250px era demasiado y rompía la interacción */
-    margin-top: 20px; 
+    margin-top: 15px; /* Ajuste moderado para legibilidad */
     margin-bottom: 25px;
     line-height: 1.6;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
+/* --- BOTÓN DE REPRODUCCIÓN --- */
 #btn-play-grande {
+    display: none; /* Controlado por JS para evitar errores */
     background-color: white;
     color: black;
     border: none;
@@ -88,36 +103,44 @@ nav {
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
-    z-index: 15; /* Asegura que sea clickeable */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.3s, transform 0.2s;
+    z-index: 15;
 }
 
-/* --- REPRODUCTOR (CORREGIDO) --- */
-/* Esta es la parte que inserta el JS para MEGA/YourUpload */
-#iframe-externo, #reproductor {
+#btn-play-grande:hover {
+    background-color: #e6e6e6;
+    transform: scale(1.05);
+}
+
+/* --- REPRODUCTOR (IFRAMES Y VIDEO) --- */
+#reproductor, #iframe-externo {
     width: 90%;
     max-width: 1100px;
     aspect-ratio: 16 / 9;
-    margin: 20px auto;
+    margin: 40px auto;
     display: block;
     background: black;
     border: none;
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
     position: relative;
-    z-index: 50; /* Por encima de todo para que funcionen los controles */
+    z-index: 50; /* Prioridad para controles de video */
 }
 
-/* --- GRID Y EPISODIOS --- */
-#grid-peliculas, #zona-episodios {
-    position: relative;
-    z-index: 30;
-    background: #141414;
+/* --- GRID DE PELÍCULAS --- */
+.section-title {
+    padding: 30px 5% 10px;
+    font-size: 1.5rem;
+    color: #e5e5e5;
 }
 
 #grid-peliculas {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
-    padding: 20px 5% 50px;
+    padding: 10px 5% 50px;
 }
 
 .movie-card {
@@ -127,20 +150,59 @@ nav {
     border-radius: 4px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    position: relative;
 }
 
-.movie-card:hover { transform: scale(1.05); }
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+
+.card-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* --- BOTONES DE EPISODIOS --- */
+#zona-episodios {
+    padding: 30px 5%;
+}
 
 .episode-btn {
     background: #333;
     color: white;
+    border: none;
     padding: 12px 20px;
     margin: 5px;
     border-radius: 4px;
     cursor: pointer;
-    border: none;
 }
 
-.episode-btn.playing { background: #e50914; }
+.episode-btn.playing {
+    background: #e50914; /* Resalte de capítulo activo */
+    font-weight: bold;
+}
 
-.hidden { display: none !important; }
+/* --- UTILIDADES --- */
+.hidden {
+    display: none !important;
+}
+
+.year-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(229, 9, 20, 0.9);
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    border-radius: 2px;
+    font-weight: bold;
+}
