@@ -86,9 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { nombre: "Cap 37: Nuevo Mundo", url: "https://www.yourupload.com/watch/n50l3d7H507i" }
     ]
 }
-                
-   ]
-        },
+    ];
          {
     titulo: "Elfen Lied",
     desc: "Terror y ciencia ficción sobre Lucy, una mutante con poderes telequinéticos y doble personalidad que escapa de un laboratorio.",
@@ -223,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
