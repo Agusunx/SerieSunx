@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
             titulo: "Ao Haru Ride", 
             desc: "Futaba se reencuentra con Kou, su primer amor de la infancia, solo para descubrir que él ha cambiado por completo.",
             anio: "2026",
-            imagen: "https://m.media-amazon.com/images/M/MV5BMzNmNjQ3OTEtMjIzOS00ZDg2LWEwMTYtMzk1ZWEzNGFiMzVkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+            imagen: "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/247773b95ec27c45db5cf7239240e29a.jpg",
             esSerie: true,
             episodios: [
                 { nombre: "Capítulo 1", url: "https://mega.nz/embed/hskljSDK#6foU1oDZ58gGQrpZecvSPjPRDazM99N7F6stPcln6nw" },
@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
