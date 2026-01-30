@@ -117,8 +117,8 @@ document.addEventListener("DOMContentLoaded", function() {
     "imagen": "https://m.media-amazon.com/images/M/MV5BMjhkN2E0YTgtY2U3NS00MWQ2LWI1MDctZTEyNDJjYWVjZGRjXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
     "esSerie": true,
     "episodios": [
-        { "nombre": "Capítulo 1: ¿Por qué te pasa esto, Anzu?", "url": "https://jkanime.net/jkplayer/um?e=cTY3VysxLzB1QjVlNVlsV0Mxb3V6bkkyWnlvOEd6RHA3VzRBMDgxTkpVZXczRmFDeTlQOFJOaVVUdWwwZ05zRlRXWE1tZjIvOVcrUFprd1ZMd2RzM3c9PTo69oCSs1X3afOGR3Fc_aaboQ--&t=aadb528da5ac38dca461d1f2a0c665f7&op=NTA5MDI=" },
-        { "nombre": "Capítulo 2: Los niños no deberían trasnochar", "url": "https://jkanime.net/jkplayer/um?e=T2hHMUdrUGFweFVrRDlKalNVUmg1L2xGMmFockRZdXFya0dKbTV4c0MvNFV2dVY1TS9vS0p6dmFBM1JmWDZCNGZ4Q2hpdHRNQzhndTJISW9mako3WUE9PTo6jD5ycWa7vvj2f3NARe4WNg--&t=f73fb9c4ba1bee57ff605df886afc0c4&op=NTA5MDM=" },
+        { "nombre": "Capítulo 1: ¿Por qué te pasa esto, Anzu?", "url": "https://mega.nz/embed/sb8F1bAZ#ashOuZV9nO4udFa_ghlsaVK8rEWlIwe8Ima6CuM_y0E" },
+        { "nombre": "Capítulo 2: Los niños no deberían trasnochar", "url": "https://mega.nz/file/xaEDSJ7Z#DyVIQyQAzDXRMwOJpPouRJfPkYUJiKqlB1mManv4csQ" },
         { "nombre": "Capítulo 3: Mi vida ahora es un simulador de citas", "url": "https://jkanime.net/jkplayer/um?e=SzBIZFpzT0FaUzIrOVdVaGc5amJmMW15UUY1bEd6N2F5SC93WTVrUzVacktWZjIxS0pNTHNlYTA2bXd0ZXU1cFdSOUU2NXBHVDdEUENMM3FMRXR6dUE9PTo6n4aHSh11Ugwd2A5zUmpW1w--&t=515a0a694298608a21bf6b7c132b7d2f&op=NTA5MDQ=" },
         { "nombre": "Capítulo 4: ¿Un amigo de la infancia no es lo más común?", "url": "https://jkanime.net/jkplayer/um?e=TUNxV0lqYVJxWVl6bmUrRUpPd2JEYnpuR3l1T1Y1MExWbTB0MWY5QWQ1WkhLVEh1TDZOektXajErWnlsWDR2b0c5WFpBaThJSi9SeURxR3dzMW5KcWc9PTo60jqGjz2gRlq7HMHOS9TXYA--&t=df85066895c5cb0950797be5fd226555&op=NTA5MDU=" },
         { "nombre": "Capítulo 5: ¡Apareció un humano de lo más molesto!", "url": "https://jkanime.net/jkplayer/um?e=a2dmV0Izck1TQVorRVhmV1RvcGswWWgySEJZLzdHSmhxV3h5cE1ubEM4TFVxSDI4dDVSemdoR3RFVSt5SkdJcS83TTNicHRRSHFtRFJSSWc2OERTOUE9PTo6_FcMEe6h6EaWstxa.1u6rw--&t=9e381cc63e58b5244d4e4378af9d9bea&op=NTA5MDY=" },
@@ -243,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
