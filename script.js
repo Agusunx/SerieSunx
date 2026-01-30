@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "titulo": "Romantic Killer",
     "desc": "Anzu Hoshino disfruta de su soltería y sus pasatiempos, hasta que un ser mágico aparece para convertir su vida en un cliché de comedia romántica contra su voluntad.",
     "anio": "2022",
-    "imagen": "https://m.media-amazon.com/images/M/MV5BMjhkN2E0YTgtY2U3NS00MWQ2LWI1MDctZTEyNDJjYWVjZGRjXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
+    "imagen": "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABf8Zu33riJQI2nwjNEv7O5bYfKTTBuDuPTbCv4-u6I8xhTk4qDM1XeocgHSth903-nBiPnKTwOlj5kLRZuzuSjFdWzM6o1Z2sUti.jpg",
     "esSerie": true,
     "episodios": [
         { "nombre": "Capítulo 1: ¿Por qué te pasa esto, Anzu?", "url": "https://mega.nz/embed/sb8F1bAZ#ashOuZV9nO4udFa_ghlsaVK8rEWlIwe8Ima6CuM_y0E" },
@@ -243,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
