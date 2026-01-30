@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { nombre: "Capítulo 13", url: "https://mega.nz/file/Ehp0DYzA#EbQZV60QAkv6MPA_pzkKzyBiCVGP6J2Sw2x51EYYtgw" }
     ]
 },
-          {
+    {
       
  
     "titulo": "Romantic Killer",
@@ -129,11 +129,9 @@ document.addEventListener("DOMContentLoaded", function() {
         { "nombre": "Capítulo 10: ¡Al revés, tonto!", "url": "https://jkanime.net/jkplayer/um?e=c29ZOERqcDVtbTRSc0w2RGlmQzA1NWI3c3FwaVlDdTJneTQzaUplSGRVQlJ1eWJwKzVGbzB6RGhLMG5IeHJaZ0RRMWhoeFdTcm1MMXYveGFnQ3Q4Vnc9PTo6GvivxzgyzfrzXk.NDKNSeQ--&t=6b308d89679034831609c5596cec9848&op=NTA5MTE=" },
         { "nombre": "Capítulo 11: Si tienes algo que decir, dilo", "url": "https://jkanime.net/jkplayer/um?e=ZVpLeWFUZ25PWWhabG1nb01tSnpyc2JIZGxlbDNVVGZNRHhuVHdPM2F6bWpGRUdWYzdzY2J2UlJaZ3cxenFROWM2ZUJRd2R5V3dyblBIRnozL1puU2c9PTo6H7.oBGwdDQ3BoAjonWnKCg--&t=36b5fc4ea8773ba91b5f2ffa6cf3e54c&op=NTA5MTI=" },
         { "nombre": "Capítulo 12: ¿Es el final de este juego?", "url": "https://jkanime.net/jkplayer/um?e=ZnRzaVZsYTVXNyttMXhyTXRBcGp1YU40bFk2RGo0RGdtbkNYV2ZVeVRYbmZINmQ1SDJsVTNyUXZJalJmTDdyaW1HRGtVVm9PdzlDV2owYzU3Y2o2Wnc9PTo6Qy44.8uijT4OZps4pSz6IA--&t=d8c35fa922874200651af31bfa30081b&op=NTA5MTM=" }
-    ]
-
-}
+        ]
         },
-    ];
+         ];
 
     const grid = document.getElementById('grid-peliculas');
     const reproductor = document.getElementById('reproductor');
@@ -245,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
