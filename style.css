@@ -86,8 +86,9 @@ nav {
 #hero-desc {
     font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: #ddd;
-    margin-top: 50px; /* Ajuste moderado para legibilidad */
+    margin-top: 80px; /* Ajuste moderado para legibilidad */
     margin-bottom: 15px;
+    
     line-height: 1.6;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
@@ -206,6 +207,7 @@ nav {
     border-radius: 2px;
     font-weight: bold;
 }
+
 
 
 
