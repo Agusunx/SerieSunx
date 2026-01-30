@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             titulo: "Ao Haru Ride", 
             desc: "Futaba se reencuentra con Kou, su primer amor de la infancia, solo para descubrir que él ha cambiado por completo.",
-            anio: "2026",
+            anio: "2014",
             imagen: "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/247773b95ec27c45db5cf7239240e29a.jpg",
             esSerie: true,
             episodios: [
@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
