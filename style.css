@@ -37,7 +37,7 @@ nav {
 /* --- HERO (BANNER PRINCIPAL) --- */
 #poster-inicial {
     position: relative;
-    min-height: 85vh; /* Altura suficiente para que el fondo se vea */
+    min-height: 45vh; /* Altura suficiente para que el fondo se vea */
     width: 100%;
     background-size: cover;
     background-position: center center;
@@ -207,6 +207,7 @@ nav {
     border-radius: 2px;
     font-weight: bold;
 }
+
 
 
 
