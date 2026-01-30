@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
     titulo: "Elfen Lied",
     desc: "Terror y ciencia ficción sobre Lucy, una mutante con poderes telequinéticos y doble personalidad que escapa de un laboratorio.",
     anio: "2004",
-    imagen: "https://m.media-amazon.com/images/M/MV5BMzYxNzU5Njk0NF5BMl5BanBnXkFtZTcwMjI5Njg3MQ@@._V1_.jpg",
+    imagen: "https://m.media-amazon.com/images/S/pv-target-images/2df46d72b94fb81c262786afb9776206de0fae8ad22c80fb290b5854c8f5e60e.jpg",
     esSerie: true,
     episodios: [
         { nombre: "Capítulo 1", url: "https://www.yourupload.com/embed/fEx3Q5F44n4w" },
@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
