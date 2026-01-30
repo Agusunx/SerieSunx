@@ -27,7 +27,7 @@ nav {
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: bold;
-    text-transform: uppercase;
+   
 }
 
 .logo span {
@@ -206,3 +206,4 @@ nav {
     border-radius: 2px;
     font-weight: bold;
 }
+
