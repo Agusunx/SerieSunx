@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
     titulo: "Death Note",
     desc: "Un estudiante superdotado encuentra un cuaderno que le permite matar a cualquiera escribiendo su nombre.",
     anio: "2006",
-    imagen: "https://i1.whakoom.com/large/1b/23/f9fa310874944386bee15beb23990b6f.jpg",
+    imagen: "https://i0.wp.com/www.septimacaja.com/wp-content/uploads/3048628-4726801454-death_ya2w.jpg",
     esSerie: true,
     episodios: [
         { nombre: "Cap 1: Renacimiento", url: "" },
@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
