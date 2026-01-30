@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             titulo: "Red Social",
-            desc: "Mark Zuckerberg crea una red social que cambia el mundo, pero pierde a sus únicos amigos en el proceso.",
+            desc: "Mark Zuckerberg crea una red social que cambia el mundo.",
             anio: "2010",
             imagen: "https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/90016aaa-2f1d-40d8-b214-2de30bccc99a/08f7e552360f80efa0cd86d5f8b197e4e53d080f.jpg?host=wbd-images.prod-vod.h264.io&partner=beamcom",
             esSerie: false,
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             titulo: "Piratas de Silicon Valley",
-            desc: "La rivalidad épica entre Steve Jobs (Apple) y Bill Gates (Microsoft) que definió la era tecnológica.",
+            desc: "La rivalidad entre Steve Jobs y Bill Gates.",
             anio: "1999",
             imagen: "https://m.media-amazon.com/images/S/pv-target-images/94ef23ac98f01b92c32e69dc0bb675dc5e68dcfd4a899cd9d49c24c5f6a32690.png",
             esSerie: false,
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             titulo: "Death Note",
-            desc: "Un estudiante superdotado encuentra un cuaderno que le permite matar a cualquiera escribiendo su nombre.",
+            desc: "Un cuaderno que permite matar a cualquiera escribiendo su nombre.",
             anio: "2006",
             imagen: "https://i1.whakoom.com/large/1b/23/f9fa310874944386bee15beb23990b6f.jpg",
             esSerie: true,
@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     ];
 
+    // Elementos del DOM
     const grid = document.getElementById('grid-peliculas');
     const reproductor = document.getElementById('reproductor');
     const posterInicial = document.getElementById('poster-inicial');
@@ -66,29 +67,28 @@ document.addEventListener("DOMContentLoaded", function() {
         posterInicial.style.backgroundImage = "url('https://i.imgur.com/Ly4FH3A.png')";
         heroTitulo.innerText = "¡Bienvenido a SerieSunx!";
         heroDesc.innerText = "Seleccioná una película o serie de la cartelera para comenzar.";
-        
-        btnPlay.style.display = 'none'; // Asegura que el botón no se vea al inicio
+        btnPlay.style.display = 'none';
         zonaEpisodios.classList.add('hidden');
         reproductor.classList.add('hidden');
         limpiarReproductor();
     }
 
-    mostrarHome();
-
-    // GENERAR CARTELERA (Asegúrate de que el ID sea 'grid-peliculas')
-    BIBLIOTECA.forEach((item) => {
-        const card = document.createElement('div');
-        card.className = 'movie-card';
-        card.style.backgroundImage = `url('${item.imagen}')`;
-        card.innerHTML = `
-            ${item.anio ? `<div class="year-badge">${item.anio}</div>` : ''}
-            <div class="card-content">
-                <div class="card-title">${item.titulo}</div>
-            </div>
-        `;
-        card.onclick = () => cargarHero(item, true);
-        grid.appendChild(card);
-    });
+    // CARGA DE CARTELERA
+    if (grid) {
+        BIBLIOTECA.forEach((item) => {
+            const card = document.createElement('div');
+            card.className = 'movie-card';
+            card.style.backgroundImage = `url('${item.imagen}')`;
+            card.innerHTML = `
+                ${item.anio ? `<div class="year-badge">${item.anio}</div>` : ''}
+                <div class="card-content">
+                    <div class="card-title">${item.titulo}</div>
+                </div>
+            `;
+            card.onclick = () => cargarHero(item, true);
+            grid.appendChild(card);
+        });
+    }
 
     function cargarHero(item, hacerScroll) {
         posterInicial.style.backgroundImage = `url('${item.imagen}')`;
@@ -97,16 +97,16 @@ document.addEventListener("DOMContentLoaded", function() {
         limpiarReproductor();
         
         posterInicial.style.display = 'flex'; 
-        reproductor.classList.add('hidden');  
+        reproductor.classList.add('hidden');
 
         if(hacerScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
 
         if (item.esSerie) {
-            btnPlay.style.display = 'none'; 
+            btnPlay.style.display = 'none';
             zonaEpisodios.classList.remove('hidden');
             renderizarEpisodios(item.episodios);
         } else {
-            btnPlay.style.display = 'flex'; // Forzamos el display flex para el botón
+            btnPlay.style.display = 'flex';
             zonaEpisodios.classList.add('hidden');
             btnPlay.onclick = () => reproducirVideo(item.url);
         }
@@ -130,8 +130,10 @@ document.addEventListener("DOMContentLoaded", function() {
     function limpiarReproductor() {
         const iframeViejo = document.getElementById('iframe-externo');
         if (iframeViejo) iframeViejo.remove();
-        reproductor.pause();
-        reproductor.src = "";
+        if (reproductor) {
+            reproductor.pause();
+            reproductor.src = "";
+        }
     }
 
     function reproducirVideo(url) {
@@ -157,4 +159,6 @@ document.addEventListener("DOMContentLoaded", function() {
             reproductor.play().catch(e => console.log("Play bloqueado:", e));
         }
     }
+
+    mostrarHome();
 });
