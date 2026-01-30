@@ -118,17 +118,17 @@ document.addEventListener("DOMContentLoaded", function() {
     "esSerie": true,
     "episodios": [
         { "nombre": "Capítulo 1: ¿Por qué te pasa esto, Anzu?", "url": "https://mega.nz/embed/sb8F1bAZ#ashOuZV9nO4udFa_ghlsaVK8rEWlIwe8Ima6CuM_y0E" },
-        { "nombre": "Capítulo 2: Los niños no deberían trasnochar", "url": "https://mega.nz/file/xaEDSJ7Z#DyVIQyQAzDXRMwOJpPouRJfPkYUJiKqlB1mManv4csQ" },
-        { "nombre": "Capítulo 3: Mi vida ahora es un simulador de citas", "url": "https://jkanime.net/jkplayer/um?e=SzBIZFpzT0FaUzIrOVdVaGc5amJmMW15UUY1bEd6N2F5SC93WTVrUzVacktWZjIxS0pNTHNlYTA2bXd0ZXU1cFdSOUU2NXBHVDdEUENMM3FMRXR6dUE9PTo6n4aHSh11Ugwd2A5zUmpW1w--&t=515a0a694298608a21bf6b7c132b7d2f&op=NTA5MDQ=" },
-        { "nombre": "Capítulo 4: ¿Un amigo de la infancia no es lo más común?", "url": "https://jkanime.net/jkplayer/um?e=TUNxV0lqYVJxWVl6bmUrRUpPd2JEYnpuR3l1T1Y1MExWbTB0MWY5QWQ1WkhLVEh1TDZOektXajErWnlsWDR2b0c5WFpBaThJSi9SeURxR3dzMW5KcWc9PTo60jqGjz2gRlq7HMHOS9TXYA--&t=df85066895c5cb0950797be5fd226555&op=NTA5MDU=" },
-        { "nombre": "Capítulo 5: ¡Apareció un humano de lo más molesto!", "url": "https://jkanime.net/jkplayer/um?e=a2dmV0Izck1TQVorRVhmV1RvcGswWWgySEJZLzdHSmhxV3h5cE1ubEM4TFVxSDI4dDVSemdoR3RFVSt5SkdJcS83TTNicHRRSHFtRFJSSWc2OERTOUE9PTo6_FcMEe6h6EaWstxa.1u6rw--&t=9e381cc63e58b5244d4e4378af9d9bea&op=NTA5MDY=" },
-        { "nombre": "Capítulo 6: ¡Es una cita! ¡Cuidado!", "url": "https://jkanime.net/jkplayer/um?e=QzlYcU0wc2JBV3h4UGZjaXFvR2RUUFBFT2N5eDA4Z3c1ZlB5L1pJZDJ0cUVOdXNTRWF4Tkk4NVF1THB2aTA1MmtUT0tjNkhPSUQ2UmUyK1ppdjlLcHc9PTo6H1y2Dlpg9HC5fxULLvW81w--&t=20eb8b0d25174b7359cda741f859df8f&op=NTA5MDc=" },
-        { "nombre": "Capítulo 7: Se siente algo diferente", "url": "https://jkanime.net/jkplayer/um?e=dytqVStnU0YvazZnOHVIMzRsSzNjR2crbHN2c0JpSlM3Z2o3UjFibFpVT2dpWHJnUlRDa2xDQVFUT0ZhUHpydVFXOXpmeDV2emE1QUpNeWVBUHJIK1E9PTo6DQktAtKBLesV3vAWW7ncdw--&t=3f5a884a6626f34aef7b8a4b0faab737&op=NTA5MDg=" },
-        { "nombre": "Capítulo 8: ¡Un evento escalofriante!", "url": "https://jkanime.net/jkplayer/um?e=TGFwakJ5OThFRG5tU3d4ZVVyVktlM25ya0JuRXBMeWRTOHFCMEdsK3RsNnd2UEZza3NNRDZRdjVUVXhCSHUyTEJMWXRFT1pSbWxuR0UvQW5qcUtZN0E9PTo6AHb89vMII2xlOD8e9WUsAw--&t=79e5623baac1ac8dbbee527992476ea4&op=NTA5MDk=" },
-        { "nombre": "Capítulo 9: ¡Es la ley del destino, maldita sea!", "url": "https://jkanime.net/jkplayer/um?e=M3h2eXZ0ZW5VU2ZSNDE2ZHNOMUsvanBDREtXL3IrTTJaTk56UmxKVi9FcnlCNlNaLzNoUVFuUytSQnNKV3dteENwT2xtODRmbTRsWk00QjFHb0d5NkE9PTo6jLO_YLhScj_n37uQesK69w--&t=a03fecac3e4f7e96c3d526e6366ed59d&op=NTA5MTA=" },
-        { "nombre": "Capítulo 10: ¡Al revés, tonto!", "url": "https://jkanime.net/jkplayer/um?e=c29ZOERqcDVtbTRSc0w2RGlmQzA1NWI3c3FwaVlDdTJneTQzaUplSGRVQlJ1eWJwKzVGbzB6RGhLMG5IeHJaZ0RRMWhoeFdTcm1MMXYveGFnQ3Q4Vnc9PTo6GvivxzgyzfrzXk.NDKNSeQ--&t=6b308d89679034831609c5596cec9848&op=NTA5MTE=" },
-        { "nombre": "Capítulo 11: Si tienes algo que decir, dilo", "url": "https://jkanime.net/jkplayer/um?e=ZVpLeWFUZ25PWWhabG1nb01tSnpyc2JIZGxlbDNVVGZNRHhuVHdPM2F6bWpGRUdWYzdzY2J2UlJaZ3cxenFROWM2ZUJRd2R5V3dyblBIRnozL1puU2c9PTo6H7.oBGwdDQ3BoAjonWnKCg--&t=36b5fc4ea8773ba91b5f2ffa6cf3e54c&op=NTA5MTI=" },
-        { "nombre": "Capítulo 12: ¿Es el final de este juego?", "url": "https://jkanime.net/jkplayer/um?e=ZnRzaVZsYTVXNyttMXhyTXRBcGp1YU40bFk2RGo0RGdtbkNYV2ZVeVRYbmZINmQ1SDJsVTNyUXZJalJmTDdyaW1HRGtVVm9PdzlDV2owYzU3Y2o2Wnc9PTo6Qy44.8uijT4OZps4pSz6IA--&t=d8c35fa922874200651af31bfa30081b&op=NTA5MTM=" }
+        { "nombre": "Capítulo 2: Los niños no deberían trasnochar", "url": "https://mega.nz/embed/xaEDSJ7Z#DyVIQyQAzDXRMwOJpPouRJfPkYUJiKqlB1mManv4csQ" },
+        { "nombre": "Capítulo 3: Mi vida ahora es un simulador de citas", "url": "https://mega.nz/embed/sCNBCBKJ#1yOU3UxCAqq_k60WeI37GFhrco-5eKm2LvM2h7Od1t" },
+        { "nombre": "Capítulo 4: ¿Un amigo de la infancia no es lo más común?", "url": "https://mega.nz/embed/dGFg2RYZ#YKWcaTUgs3uN1xkxkISfJcICkbWDJcTYoAT--87dItg" },
+        { "nombre": "Capítulo 5: ¡Apareció un humano de lo más molesto!", "url": "https://mega.nz/embed/ELUjwDhS#QlC4nd1KJ9PxfGbHPbqiW8yYpAS9zBq4UF8kI9Eqlso" },
+        { "nombre": "Capítulo 6: ¡Es una cita! ¡Cuidado!", "url": "https://mega.nz/embed/pa8ikbyL#lJDPtKT6uL79MVPhj6QIfAVqtO1p_KAb-bkX-jcI41s" },
+        { "nombre": "Capítulo 7: Se siente algo diferente", "url": "https://mega.nz/embed/4CkzjZIQ#QXdiwRQfeBxc9afW89PX9kMivBCdNcsIvUetxuZ90vs" },
+        { "nombre": "Capítulo 8: ¡Un evento escalofriante!", "url": "https://mega.nz/embed/8H9iwZ7a#6fMqlids2Y2mKiyIYV_ARflfq0smEwpP4Arct0765zg" },
+        { "nombre": "Capítulo 9: ¡Es la ley del destino, maldita sea!", "url": "https://mega.nz/embed/FLU1XK7Z#Zniy74UfAAd0s1xnyJbJ0BVeTjUKxQUnDqkcnxkMKfA" },
+        { "nombre": "Capítulo 10: ¡Al revés, tonto!", "url": "https://mega.nz/embed/IGF11LAD#AEPQUKEgxzC2NmKYigZ67p10FOIxwzYbqEAZwsdWsXM" },
+        { "nombre": "Capítulo 11: Si tienes algo que decir, dilo", "url": "https://mega.nz/embed/5XcCmDzT#IgqMpzCzueHoE2cvDwKVGuOMjkcWL92DGzQxRuaSvxE" },
+        { "nombre": "Capítulo 12: ¿Es el final de este juego?", "url": "https://mega.nz/embed/ZT93lKbA#2rbFS8zF_fp3PnZS5qIQefqE1654vVHpI1EkRdtL_0o" }
         ]
         },
          ];
@@ -243,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
