@@ -41,12 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
             url: "https://www.dropbox.com/scl/fi/sw2sccrl5n8x3f9gt7scf/Silicon.mp4?rlkey=al95uv95jkg4mh7zm7ohd9mv7&st=gsy9sm1i&raw=1"
         },
         {
-            titulo: "Death Note",
-            desc: "Un estudiante superdotado encuentra un cuaderno que le permite matar a cualquiera escribiendo su nombre.",
-            anio: "2006",
-            imagen: "https://i1.whakoom.com/large/1b/23/f9fa310874944386bee15beb23990b6f.jpg",
-            esSerie: true,
-           {
     titulo: "Death Note",
     desc: "Un estudiante superdotado encuentra un cuaderno que le permite matar a cualquiera escribiendo su nombre.",
     anio: "2006",
@@ -93,8 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ]
 }
                 
-                https://www.yourupload.com/watch/sWEL12h7u8bb
-            ]
+   ]
         },
          {
     titulo: "Elfen Lied",
@@ -230,5 +223,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
