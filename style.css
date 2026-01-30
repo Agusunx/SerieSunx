@@ -60,9 +60,9 @@ nav {
     height: 100%;
     /* Gradiente oscuro a la izquierda para el texto */
     background: linear-gradient(to right, 
-        rgba(0,0,0,0.85) 40%, 
-        rgba(0,0,0,0.4) 70%, 
-        transparent 10%),
+        rgba(0,0,0,0.85) 30%, 
+        rgba(0,0,0,0.4) 50%, 
+        transparent 15%),
     linear-gradient(to top, #141414 5%, transparent 20%);
     z-index: 2;
 }
@@ -87,7 +87,7 @@ nav {
     font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: #ddd;
     margin-top: 50px; /* Ajuste moderado para legibilidad */
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     line-height: 1.6;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
@@ -206,5 +206,6 @@ nav {
     border-radius: 2px;
     font-weight: bold;
 }
+
 
 
