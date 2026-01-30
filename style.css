@@ -60,9 +60,9 @@ nav {
     height: 100%;
     /* Gradiente oscuro a la izquierda para el texto */
     background: linear-gradient(to right, 
-        rgba(0,0,0,0.85) 20%, 
-        rgba(0,0,0,0.4) 50%, 
-        transparent 100%),
+        rgba(0,0,0,0.85) 40%, 
+        rgba(0,0,0,0.4) 70%, 
+        transparent 10%),
     linear-gradient(to top, #141414 5%, transparent 20%);
     z-index: 2;
 }
@@ -86,7 +86,7 @@ nav {
 #hero-desc {
     font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: #ddd;
-    margin-top: 15px; /* Ajuste moderado para legibilidad */
+    margin-top: 50px; /* Ajuste moderado para legibilidad */
     margin-bottom: 25px;
     line-height: 1.6;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
@@ -206,4 +206,5 @@ nav {
     border-radius: 2px;
     font-weight: bold;
 }
+
 
