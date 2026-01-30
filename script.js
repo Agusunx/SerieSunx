@@ -109,50 +109,29 @@ document.addEventListener("DOMContentLoaded", function() {
     ]
 },
           {
-            titulo: "Death Note",
-            desc: "Un estudiante superdotado encuentra un cuaderno que le permite matar a cualquiera escribiendo su nombre.",
-            anio: "2006",
-            imagen: "https://i0.wp.com/www.septimacaja.com/wp-content/uploads/3048628-4726801454-death_ya2w.jpg",
-            esSerie: true,
-            episodios: [
-                { nombre: "Cap 1: Renacimiento", url: "https://www.yourupload.com/embed/C25TFyQ5pnNs" },
-                { nombre: "Cap 2: Duelo", url: "https://www.yourupload.com/embed/6LuJXvkW5DN0" },
-                { nombre: "Cap 3: Negociación", url: "https://www.yourupload.com/embed/i4W5U6JKlQcx" },
-                { nombre: "Cap 4: Persecución", url: "https://www.yourupload.com/embed/sWEL12h7u8bb" },
-                { nombre: "Cap 5: Táctica", url: "https://www.yourupload.com/embed/Jmjc1fgwLsW4" },
-                { nombre: "Cap 6: Herida abierta", url: "https://www.yourupload.com/embed/i4A7XK8Wme1M" },
-                { nombre: "Cap 7: Tentación", url: "https://www.yourupload.com/embed/5T87FC3lQ03W" },
-                { nombre: "Cap 8: Horizonte", url: "https://www.yourupload.com/embed/NyMTFxp3a4iQ" },
-                { nombre: "Cap 9: Contacto", url: "https://www.yourupload.com/embed/0cXOU3hk82Pk" },
-                { nombre: "Cap 10: Sospecha", url: "https://www.yourupload.com/embed/A2DUfW2q7eYJ" },
-                { nombre: "Cap 11: Asalto", url: "https://www.yourupload.com/embed/3oJE2hQed52Y" },
-                { nombre: "Cap 12: Amor", url: "https://www.yourupload.com/embed/Ax8NcA7tLRwc" },
-                { nombre: "Cap 13: Confesión", url: "https://www.yourupload.com/embed/3GkH1G3qV5K6" },
-                { nombre: "Cap 14: Amistad", url: "https://www.yourupload.com/embed/tr6R751Y76W7" },
-                { nombre: "Cap 15: Apuesta", url: "https://www.yourupload.com/embed/qRSYB3qsTdP0" },
-                { nombre: "Cap 16: Decisión", url: "https://www.yourupload.com/embed/fbEc35E5UgPu" },
-                { nombre: "Cap 17: Ejecución", url: "https://www.yourupload.com/embed/roKi5Y4ysW4b" },
-                { nombre: "Cap 18: Aliados", url: "https://www.yourupload.com/embed/6a1105Y8IH1e" },
-                { nombre: "Cap 19: Matzuda", url: "https://www.yourupload.com/embed/1oPEfCW61nW8" },
-                { nombre: "Cap 20: Improvisación", url: "https://www.yourupload.com/embed/8iVxv4hUW760" },
-                { nombre: "Cap 21: Actividad", url: "https://www.yourupload.com/embed/5PdbCg4b0DuG" },
-                { nombre: "Cap 22: Inducción", url: "https://www.yourupload.com/embed/gGSmfUC3rbsv" },
-                { nombre: "Cap 23: Frenesí", url: "https://www.yourupload.com/embed/ex2eq33IRqYb" },
-                { nombre: "Cap 24: Resurrección", url: "https://www.yourupload.com/embed/5Fin6EKu7s46" },
-                { nombre: "Cap 25: Silencio", url: "https://www.yourupload.com/embed/p63nOBRGe8X0" },
-                { nombre: "Cap 26: Regeneración", url: "https://www.yourupload.com/embed/tRvB78Bie70k" },
-                { nombre: "Cap 27: Secuestro", url: "https://www.yourupload.com/embed/N8tCFX6HC7JJ" },
-                { nombre: "Cap 28: Impaciencia", url: "https://www.yourupload.com/embed/1TO5K66o018y" },
-                { nombre: "Cap 29: Padre", url: "https://www.yourupload.com/embed/Oa32y5YeEFEM" },
-                { nombre: "Cap 30: Justicia", url: "https://www.yourupload.com/embed/mo3Kd4XN8DHc" },
-                { nombre: "Cap 31: Transferencia", url: "https://www.yourupload.com/embed/3Kj7M850H8G3" },
-                { nombre: "Cap 32: Selección", url: "https://www.yourupload.com/embed/gb8eAR3uIKPl" },
-                { nombre: "Cap 33: Desprecio", url: "https://www.yourupload.com/embed/quhayLyvj5cY" },
-                { nombre: "Cap 34: Vigilancia", url: "https://www.yourupload.com/embed/CriOcv8U2E8O" },
-                { nombre: "Cap 35: Intento", url: "https://www.yourupload.com/embed/B6Q68hdo7CU0" },
-                { nombre: "Cap 36: 28 de enero", url: "https://www.yourupload.com/embed/pUeEpB38sxXa" },
-                { nombre: "Cap 37: Nuevo Mundo", url: "https://www.yourupload.com/embed/n50l3d7H507i" }
-            ]
+      
+ 
+    "titulo": "Romantic Killer",
+    "desc": "Anzu Hoshino disfruta de su soltería y sus pasatiempos, hasta que un ser mágico aparece para convertir su vida en un cliché de comedia romántica contra su voluntad.",
+    "anio": "2022",
+    "imagen": "https://m.media-amazon.com/images/M/MV5BMjhkN2E0YTgtY2U3NS00MWQ2LWI1MDctZTEyNDJjYWVjZGRjXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
+    "esSerie": true,
+    "episodios": [
+        { "nombre": "Capítulo 1: ¿Por qué te pasa esto, Anzu?", "url": "https://jkanime.net/jkplayer/um?e=cTY3VysxLzB1QjVlNVlsV0Mxb3V6bkkyWnlvOEd6RHA3VzRBMDgxTkpVZXczRmFDeTlQOFJOaVVUdWwwZ05zRlRXWE1tZjIvOVcrUFprd1ZMd2RzM3c9PTo69oCSs1X3afOGR3Fc_aaboQ--&t=aadb528da5ac38dca461d1f2a0c665f7&op=NTA5MDI=" },
+        { "nombre": "Capítulo 2: Los niños no deberían trasnochar", "url": "https://jkanime.net/jkplayer/um?e=T2hHMUdrUGFweFVrRDlKalNVUmg1L2xGMmFockRZdXFya0dKbTV4c0MvNFV2dVY1TS9vS0p6dmFBM1JmWDZCNGZ4Q2hpdHRNQzhndTJISW9mako3WUE9PTo6jD5ycWa7vvj2f3NARe4WNg--&t=f73fb9c4ba1bee57ff605df886afc0c4&op=NTA5MDM=" },
+        { "nombre": "Capítulo 3: Mi vida ahora es un simulador de citas", "url": "https://jkanime.net/jkplayer/um?e=SzBIZFpzT0FaUzIrOVdVaGc5amJmMW15UUY1bEd6N2F5SC93WTVrUzVacktWZjIxS0pNTHNlYTA2bXd0ZXU1cFdSOUU2NXBHVDdEUENMM3FMRXR6dUE9PTo6n4aHSh11Ugwd2A5zUmpW1w--&t=515a0a694298608a21bf6b7c132b7d2f&op=NTA5MDQ=" },
+        { "nombre": "Capítulo 4: ¿Un amigo de la infancia no es lo más común?", "url": "https://jkanime.net/jkplayer/um?e=TUNxV0lqYVJxWVl6bmUrRUpPd2JEYnpuR3l1T1Y1MExWbTB0MWY5QWQ1WkhLVEh1TDZOektXajErWnlsWDR2b0c5WFpBaThJSi9SeURxR3dzMW5KcWc9PTo60jqGjz2gRlq7HMHOS9TXYA--&t=df85066895c5cb0950797be5fd226555&op=NTA5MDU=" },
+        { "nombre": "Capítulo 5: ¡Apareció un humano de lo más molesto!", "url": "https://jkanime.net/jkplayer/um?e=a2dmV0Izck1TQVorRVhmV1RvcGswWWgySEJZLzdHSmhxV3h5cE1ubEM4TFVxSDI4dDVSemdoR3RFVSt5SkdJcS83TTNicHRRSHFtRFJSSWc2OERTOUE9PTo6_FcMEe6h6EaWstxa.1u6rw--&t=9e381cc63e58b5244d4e4378af9d9bea&op=NTA5MDY=" },
+        { "nombre": "Capítulo 6: ¡Es una cita! ¡Cuidado!", "url": "https://jkanime.net/jkplayer/um?e=QzlYcU0wc2JBV3h4UGZjaXFvR2RUUFBFT2N5eDA4Z3c1ZlB5L1pJZDJ0cUVOdXNTRWF4Tkk4NVF1THB2aTA1MmtUT0tjNkhPSUQ2UmUyK1ppdjlLcHc9PTo6H1y2Dlpg9HC5fxULLvW81w--&t=20eb8b0d25174b7359cda741f859df8f&op=NTA5MDc=" },
+        { "nombre": "Capítulo 7: Se siente algo diferente", "url": "https://jkanime.net/jkplayer/um?e=dytqVStnU0YvazZnOHVIMzRsSzNjR2crbHN2c0JpSlM3Z2o3UjFibFpVT2dpWHJnUlRDa2xDQVFUT0ZhUHpydVFXOXpmeDV2emE1QUpNeWVBUHJIK1E9PTo6DQktAtKBLesV3vAWW7ncdw--&t=3f5a884a6626f34aef7b8a4b0faab737&op=NTA5MDg=" },
+        { "nombre": "Capítulo 8: ¡Un evento escalofriante!", "url": "https://jkanime.net/jkplayer/um?e=TGFwakJ5OThFRG5tU3d4ZVVyVktlM25ya0JuRXBMeWRTOHFCMEdsK3RsNnd2UEZza3NNRDZRdjVUVXhCSHUyTEJMWXRFT1pSbWxuR0UvQW5qcUtZN0E9PTo6AHb89vMII2xlOD8e9WUsAw--&t=79e5623baac1ac8dbbee527992476ea4&op=NTA5MDk=" },
+        { "nombre": "Capítulo 9: ¡Es la ley del destino, maldita sea!", "url": "https://jkanime.net/jkplayer/um?e=M3h2eXZ0ZW5VU2ZSNDE2ZHNOMUsvanBDREtXL3IrTTJaTk56UmxKVi9FcnlCNlNaLzNoUVFuUytSQnNKV3dteENwT2xtODRmbTRsWk00QjFHb0d5NkE9PTo6jLO_YLhScj_n37uQesK69w--&t=a03fecac3e4f7e96c3d526e6366ed59d&op=NTA5MTA=" },
+        { "nombre": "Capítulo 10: ¡Al revés, tonto!", "url": "https://jkanime.net/jkplayer/um?e=c29ZOERqcDVtbTRSc0w2RGlmQzA1NWI3c3FwaVlDdTJneTQzaUplSGRVQlJ1eWJwKzVGbzB6RGhLMG5IeHJaZ0RRMWhoeFdTcm1MMXYveGFnQ3Q4Vnc9PTo6GvivxzgyzfrzXk.NDKNSeQ--&t=6b308d89679034831609c5596cec9848&op=NTA5MTE=" },
+        { "nombre": "Capítulo 11: Si tienes algo que decir, dilo", "url": "https://jkanime.net/jkplayer/um?e=ZVpLeWFUZ25PWWhabG1nb01tSnpyc2JIZGxlbDNVVGZNRHhuVHdPM2F6bWpGRUdWYzdzY2J2UlJaZ3cxenFROWM2ZUJRd2R5V3dyblBIRnozL1puU2c9PTo6H7.oBGwdDQ3BoAjonWnKCg--&t=36b5fc4ea8773ba91b5f2ffa6cf3e54c&op=NTA5MTI=" },
+        { "nombre": "Capítulo 12: ¿Es el final de este juego?", "url": "https://jkanime.net/jkplayer/um?e=ZnRzaVZsYTVXNyttMXhyTXRBcGp1YU40bFk2RGo0RGdtbkNYV2ZVeVRYbmZINmQ1SDJsVTNyUXZJalJmTDdyaW1HRGtVVm9PdzlDV2owYzU3Y2o2Wnc9PTo6Qy44.8uijT4OZps4pSz6IA--&t=d8c35fa922874200651af31bfa30081b&op=NTA5MTM=" }
+    ]
+
+}
         },
     ];
 
@@ -266,6 +245,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
