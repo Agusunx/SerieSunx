@@ -84,10 +84,9 @@ document.addEventListener("DOMContentLoaded", function() {
         { nombre: "Cap 35: Intento", url: "https://www.yourupload.com/watch/B6Q68hdo7CU0" },
         { nombre: "Cap 36: 28 de enero", url: "https://www.yourupload.com/watch/pUeEpB38sxXa" },
         { nombre: "Cap 37: Nuevo Mundo", url: "https://www.yourupload.com/watch/n50l3d7H507i" }
-    ]
-}
-    ];
-         {
+       ]
+        },
+        {
     titulo: "Elfen Lied",
     desc: "Terror y ciencia ficción sobre Lucy, una mutante con poderes telequinéticos y doble personalidad que escapa de un laboratorio.",
     anio: "2004",
@@ -221,6 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
