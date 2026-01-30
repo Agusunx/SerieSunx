@@ -107,7 +107,53 @@ document.addEventListener("DOMContentLoaded", function() {
         { nombre: "Capítulo 12", url: "https://mega.nz/file/Qlpk3SZS#FsJ3vWF_gEUxqtA1WZkKIpPoSIcFz8O6ot8SuLOrxLo" },
         { nombre: "Capítulo 13", url: "https://mega.nz/file/Ehp0DYzA#EbQZV60QAkv6MPA_pzkKzyBiCVGP6J2Sw2x51EYYtgw" }
     ]
-}
+},
+          {
+            titulo: "Death Note",
+            desc: "Un estudiante superdotado encuentra un cuaderno que le permite matar a cualquiera escribiendo su nombre.",
+            anio: "2006",
+            imagen: "https://i0.wp.com/www.septimacaja.com/wp-content/uploads/3048628-4726801454-death_ya2w.jpg",
+            esSerie: true,
+            episodios: [
+                { nombre: "Cap 1: Renacimiento", url: "https://www.yourupload.com/embed/C25TFyQ5pnNs" },
+                { nombre: "Cap 2: Duelo", url: "https://www.yourupload.com/embed/6LuJXvkW5DN0" },
+                { nombre: "Cap 3: Negociación", url: "https://www.yourupload.com/embed/i4W5U6JKlQcx" },
+                { nombre: "Cap 4: Persecución", url: "https://www.yourupload.com/embed/sWEL12h7u8bb" },
+                { nombre: "Cap 5: Táctica", url: "https://www.yourupload.com/embed/Jmjc1fgwLsW4" },
+                { nombre: "Cap 6: Herida abierta", url: "https://www.yourupload.com/embed/i4A7XK8Wme1M" },
+                { nombre: "Cap 7: Tentación", url: "https://www.yourupload.com/embed/5T87FC3lQ03W" },
+                { nombre: "Cap 8: Horizonte", url: "https://www.yourupload.com/embed/NyMTFxp3a4iQ" },
+                { nombre: "Cap 9: Contacto", url: "https://www.yourupload.com/embed/0cXOU3hk82Pk" },
+                { nombre: "Cap 10: Sospecha", url: "https://www.yourupload.com/embed/A2DUfW2q7eYJ" },
+                { nombre: "Cap 11: Asalto", url: "https://www.yourupload.com/embed/3oJE2hQed52Y" },
+                { nombre: "Cap 12: Amor", url: "https://www.yourupload.com/embed/Ax8NcA7tLRwc" },
+                { nombre: "Cap 13: Confesión", url: "https://www.yourupload.com/embed/3GkH1G3qV5K6" },
+                { nombre: "Cap 14: Amistad", url: "https://www.yourupload.com/embed/tr6R751Y76W7" },
+                { nombre: "Cap 15: Apuesta", url: "https://www.yourupload.com/embed/qRSYB3qsTdP0" },
+                { nombre: "Cap 16: Decisión", url: "https://www.yourupload.com/embed/fbEc35E5UgPu" },
+                { nombre: "Cap 17: Ejecución", url: "https://www.yourupload.com/embed/roKi5Y4ysW4b" },
+                { nombre: "Cap 18: Aliados", url: "https://www.yourupload.com/embed/6a1105Y8IH1e" },
+                { nombre: "Cap 19: Matzuda", url: "https://www.yourupload.com/embed/1oPEfCW61nW8" },
+                { nombre: "Cap 20: Improvisación", url: "https://www.yourupload.com/embed/8iVxv4hUW760" },
+                { nombre: "Cap 21: Actividad", url: "https://www.yourupload.com/embed/5PdbCg4b0DuG" },
+                { nombre: "Cap 22: Inducción", url: "https://www.yourupload.com/embed/gGSmfUC3rbsv" },
+                { nombre: "Cap 23: Frenesí", url: "https://www.yourupload.com/embed/ex2eq33IRqYb" },
+                { nombre: "Cap 24: Resurrección", url: "https://www.yourupload.com/embed/5Fin6EKu7s46" },
+                { nombre: "Cap 25: Silencio", url: "https://www.yourupload.com/embed/p63nOBRGe8X0" },
+                { nombre: "Cap 26: Regeneración", url: "https://www.yourupload.com/embed/tRvB78Bie70k" },
+                { nombre: "Cap 27: Secuestro", url: "https://www.yourupload.com/embed/N8tCFX6HC7JJ" },
+                { nombre: "Cap 28: Impaciencia", url: "https://www.yourupload.com/embed/1TO5K66o018y" },
+                { nombre: "Cap 29: Padre", url: "https://www.yourupload.com/embed/Oa32y5YeEFEM" },
+                { nombre: "Cap 30: Justicia", url: "https://www.yourupload.com/embed/mo3Kd4XN8DHc" },
+                { nombre: "Cap 31: Transferencia", url: "https://www.yourupload.com/embed/3Kj7M850H8G3" },
+                { nombre: "Cap 32: Selección", url: "https://www.yourupload.com/embed/gb8eAR3uIKPl" },
+                { nombre: "Cap 33: Desprecio", url: "https://www.yourupload.com/embed/quhayLyvj5cY" },
+                { nombre: "Cap 34: Vigilancia", url: "https://www.yourupload.com/embed/CriOcv8U2E8O" },
+                { nombre: "Cap 35: Intento", url: "https://www.yourupload.com/embed/B6Q68hdo7CU0" },
+                { nombre: "Cap 36: 28 de enero", url: "https://www.yourupload.com/embed/pUeEpB38sxXa" },
+                { nombre: "Cap 37: Nuevo Mundo", url: "https://www.yourupload.com/embed/n50l3d7H507i" }
+            ]
+        },
     ];
 
     const grid = document.getElementById('grid-peliculas');
@@ -220,6 +266,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
