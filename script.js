@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // MUESTRA EL INICIO (PANORAMA GENERAL)
     function mostrarHome() {
-        posterInicial.style.backgroundImage = "url('https://i.imgur.com/Ly4FH3A.png')";
+        posterInicial.style.backgroundImage = "url('https://i.imgur.com/QDZSVEz.png')";
         heroTitulo.innerText = "¡Bienvenido!";
         heroDesc.innerText = "Seleccioná una película  o serie para comenzar.";
         
@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 
