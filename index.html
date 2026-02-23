@@ -3,46 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SerieSunx | Stream</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>SerieSunx</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="logo">Series<span>Sunx</span></a>
-    </nav>
+<!-- Script base embebido para descarga desde admin -->
+<script id="script-base-data" type="text/plain" style="display:none"></script>
 
-    <div class="container">
-        
-        <div class="player-container">
-            <div id="video-wrapper">
-                
-                <div id="poster-inicial">
-                    <div class="hero-content">
-                        <h2 id="hero-titulo">¡Bienvenido!</h2>
-                        <p id="hero-desc">Seleccioná una película o serie para comenzar.</p>
-                        <button id="btn-play-grande">▶ REPRODUCIR AHORA</button>
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav id="navbar">
+    <a href="#" class="logo" onclick="location.reload();return false">Series<span>Sunx</span></a>
+    <div class="nav-tabs">
+        <button class="nav-tab active" data-cat="Todo">Todo</button>
+        <button class="nav-tab" data-cat="Anime">Anime</button>
+        <button class="nav-tab" data-cat="Series">Series</button>
+        <button class="nav-tab" data-cat="Películas">Películas</button>
+    </div>
+    <div class="nav-right">
+        <button class="btn-icon" onclick="verRandom()" title="Sorprendeme">🎲</button>
+        <div class="search-wrap">
+            <span class="sico">⌕</span>
+            <input type="text" id="buscador" placeholder="Buscar...">
+        </div>
+        <button class="btn-admin-open" onclick="abrirAdmin()" title="Admin">⚙</button>
+    </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero">
+    <div id="hero-backdrop"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-content">
+        <div id="hero-tipo" class="hero-tag"></div>
+        <h1 id="hero-titulo"></h1>
+        <p id="hero-desc"></p>
+        <div class="hero-meta">
+            <span id="hero-anio"></span>
+            <span id="hero-prog" style="display:none"></span>
+        </div>
+        <div class="hero-btns">
+            <button id="btn-hero-play" class="btn-primary hidden">▶ Reproducir</button>
+            <button id="btn-hero-eps" class="btn-primary hidden">☰ Ver episodios</button>
+        </div>
+    </div>
+    <div id="hero-dots"></div>
+</section>
+
+<!-- ═══════════ SECCIONES ═══════════ -->
+<section id="sec-continuar" class="csec hidden">
+    <h2 class="stitle">▶ Continuar viendo</h2>
+    <div class="srow" id="grid-continuar"></div>
+</section>
+
+<section id="sec-favs" class="csec hidden">
+    <h2 class="stitle">♥ Mis favoritos</h2>
+    <div class="srow" id="grid-favs"></div>
+</section>
+
+<section class="csec">
+    <h2 class="stitle">📚 Biblioteca</h2>
+    <div id="grid-peliculas" class="card-grid"></div>
+    <p id="sin-resultados" class="hidden" style="text-align:center;color:#555;padding:60px 20px;font-size:0.9rem">Sin resultados.</p>
+</section>
+
+<!-- ═══════════ MODAL VER ═══════════ -->
+<div id="modal-overlay" class="hidden" onclick="if(event.target===this)cerrarModal()">
+    <div id="modal-box">
+        <button class="modal-x" onclick="cerrarModal()">✕</button>
+        <div id="player-wrap">
+            <video id="reproductor" controls class="hidden" playsinline></video>
+        </div>
+        <div id="modal-body">
+            <div id="modal-backdrop"></div>
+            <div class="modal-inner">
+                <div class="modal-head">
+                    <div>
+                        <h2 id="modal-titulo"></h2>
+                        <div class="modal-badges">
+                            <span id="modal-anio" class="mbadge"></span>
+                            <span id="modal-tipo" class="mbadge accent"></span>
+                            <span id="modal-eps-n" class="mbadge"></span>
+                        </div>
                     </div>
+                    <button id="modal-fav" class="btn-fav" onclick="toggleFavModal()">♡ Favorito</button>
                 </div>
-                
-                <video id="reproductor" controls class="hidden">
-                    Tu navegador no soporta video HTML5.
-                </video>
+                <p id="modal-desc"></p>
+                <div id="zona-eps" class="hidden">
+                    <div class="eps-lbl">EPISODIOS</div>
+                    <div id="lista-eps"></div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <div id="zona-episodios" class="hidden">
-                <h3>Temporada 1 - Episodios:</h3>
-                <div id="lista-capitulos"></div>
+<!-- ═══════════ ADMIN OVERLAY ═══════════ -->
+<div id="admin-overlay" class="hidden" onclick="if(event.target===this)cerrarAdmin()">
+    <div id="admin-box">
+        <button class="modal-x" onclick="cerrarAdmin()">✕</button>
+
+        <!-- LOGIN -->
+        <div id="admin-login">
+            <div class="admin-login-inner">
+                <div class="admin-logo">Series<span>Sunx</span> Admin</div>
+                <div class="al-field"><label>Usuario</label><input type="text" id="l-user" placeholder="Usuario" autocomplete="username" onkeydown="if(event.key==='Enter')adminLogin()"></div>
+                <div class="al-field"><label>Contraseña</label><input type="password" id="l-pass" placeholder="Contraseña" autocomplete="current-password" onkeydown="if(event.key==='Enter')adminLogin()"></div>
+                <button class="btn-login" onclick="adminLogin()">Entrar</button>
+                <div id="login-err" style="display:none;color:#ff6b8a;font-size:0.8rem;margin-top:8px;text-align:center">Usuario o contraseña incorrectos</div>
             </div>
         </div>
 
-        <h2 class="section-title">Tu Biblioteca</h2>
-        <div id="grid-peliculas"></div>
+        <!-- PANEL -->
+        <div id="admin-panel" class="hidden">
+            <div class="admin-layout">
+
+                <!-- FORMULARIO -->
+                <div class="admin-sidebar">
+                    <div class="admin-si">
+
+                        <!-- Tipo -->
+                        <div class="atipo-row">
+                            <button class="atipo-btn ta active" data-tipo="anime" onclick="adminSetTipo('anime',this)">🎌 Anime</button>
+                            <button class="atipo-btn ts" data-tipo="serie" onclick="adminSetTipo('serie',this)">📺 Serie</button>
+                            <button class="atipo-btn tp" data-tipo="pelicula" onclick="adminSetTipo('pelicula',this)">🎬 Peli</button>
+                        </div>
+                        <input type="hidden" id="admin-tipo-val" value="anime">
+
+                        <!-- Poster preview -->
+                        <div class="admin-poster-wrap" id="admin-poster-wrap">
+                            <img id="admin-poster-img" src="" alt="" style="display:none;width:100%;height:100%;object-fit:cover">
+                            <div id="admin-poster-ph" style="display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;color:#555;font-size:0.78rem"><span style="font-size:1.8rem">🖼️</span>Vista previa del póster</div>
+                        </div>
+
+                        <!-- Campos básicos -->
+                        <div class="af"><label>Título *</label><input type="text" id="admin-titulo" placeholder="Ej: Attack on Titan"></div>
+                        <div class="af"><label>Póster (URL de imagen)</label><input type="url" id="admin-imagen" placeholder="https://..." oninput="adminPosterPreview(this.value)"></div>
+                        <div class="af"><label>Año</label><input type="number" id="admin-anio" placeholder="2024" min="1900" max="2030"></div>
+                        <div class="af"><label>Descripción <span style="color:#444;font-weight:400">(opcional)</span></label><textarea id="admin-desc" placeholder="Sinopsis corta..."></textarea></div>
+
+                        <hr class="ahr">
+
+                        <!-- PELÍCULA -->
+                        <div id="admin-sec-peli" style="display:none">
+                            <div class="af">
+                                <label>Link del video *</label>
+                                <input type="url" id="admin-url-peli" placeholder="https://...">
+                                <div class="ahint"><b>Dropbox:</b> cambiá <code>?dl=0</code> → <code>?raw=1</code><br><b>Google Drive:</b> <code>uc?export=download&amp;id=ID</code><br><b>Cualquier embed:</b> streamtape, doodstream, filemoon, mega, etc.</div>
+                            </div>
+                        </div>
+
+                        <!-- SERIE/ANIME -->
+                        <div id="admin-sec-serie">
+                            <div class="af">
+                                <label>Links de episodios * — uno por línea</label>
+                                <textarea id="admin-links" placeholder="https://mega.nz/embed/...&#10;https://streamtape.com/e/...&#10;https://doodstream.com/e/...&#10;..." style="min-height:140px;font-size:0.76rem" oninput="adminContarLinks()"></textarea>
+                                <div id="admin-link-count" style="display:none;background:rgba(232,0,76,0.08);border:1px solid rgba(232,0,76,0.2);border-radius:6px;padding:6px 11px;font-size:0.76rem;color:#ff6b8a;margin-top:5px"></div>
+                                <div class="ahint">Pegá todos los links juntos, uno por línea. Compatible con mega, yourupload, streamtape, doodstream, filemoon, mixdrop, ¡cualquier sitio!</div>
+                            </div>
+                            <div class="af">
+                                <label>Nombres de episodios <span style="color:#444;font-weight:400">(opcional)</span></label>
+                                <textarea id="admin-names" placeholder="Cap 1: El Comienzo&#10;Cap 2: La Batalla&#10;..." style="min-height:80px;font-size:0.76rem"></textarea>
+                                <div class="ahint">Si dejás vacío: Episodio 1, Episodio 2...</div>
+                            </div>
+                        </div>
+
+                        <button class="btn-admin-save" onclick="adminAgregar()">＋ Agregar</button>
+                        <div id="admin-form-err" style="display:none;color:#ff6b8a;font-size:0.78rem;margin-top:8px"></div>
+
+                    </div>
+                </div>
+
+                <!-- LISTA -->
+                <div class="admin-main">
+                    <div class="admin-main-head">
+                        <div>
+                            <div class="admin-main-title">Biblioteca extras</div>
+                            <div style="font-size:0.75rem;color:#555;margin-top:2px">Se guarda automáticamente en este navegador</div>
+                        </div>
+                        <button class="btn-dl" onclick="adminDescargar()">⬇ Descargar script.js</button>
+                    </div>
+
+                    <div class="admin-dl-banner" id="admin-dl-banner" style="display:none">
+                        <strong style="color:#22c55e">✓ script.js descargado</strong>
+                        <div class="dl-step"><span class="ds-n">1</span>El archivo se bajó a tu carpeta Descargas</div>
+                        <div class="dl-step"><span class="ds-n">2</span>Reemplazá el script.js viejo en tu carpeta del proyecto</div>
+                        <div class="dl-step"><span class="ds-n">3</span>Si usás GitHub Pages: subí el nuevo archivo al repo 🎉</div>
+                    </div>
+
+                    <div id="admin-lista"></div>
+                    <div id="admin-empty" style="display:none;text-align:center;padding:40px 20px;color:#555;font-size:0.85rem">
+                        <div style="font-size:2rem;margin-bottom:8px">📭</div>
+                        Todavía no agregaste nada extra.<br>Usá el formulario de la izquierda.
+                    </div>
+
+                    <div class="admin-tip">
+                        <strong>💡 Cómo funciona</strong><br>
+                        Todo lo que agregás acá aparece en el sitio al instante.<br>
+                        Hacé clic en <b>Descargar script.js</b> para que quede guardado permanentemente en GitHub.
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- fin admin-panel -->
 
     </div>
+</div>
 
-    <script src="script.js"></script>
+<!-- TOAST -->
+<div id="toast" class="hidden"></div>
+
+<script src="script.js"></script>
+<script>
+// Cargar el contenido del script en el elemento hidden para descarga
+fetch('script.js').then(r => r.text()).then(t => {
+    document.getElementById('script-base-data').textContent = t;
+}).catch(() => {});
+</script>
 </body>
 </html>
-
