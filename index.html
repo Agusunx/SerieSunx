@@ -74,31 +74,9 @@
     <div id="modal-box">
         <button class="modal-x" onclick="cerrarModal()">✕</button>
         <div id="player-wrap">
+            <div class="player-watermark">Series<span>Sunx</span></div>
             <video id="reproductor" controls class="hidden" playsinline></video>
         </div>
-        <div id="modal-body">
-            <div id="modal-backdrop"></div>
-            <div class="modal-inner">
-                <div class="modal-head">
-                    <div>
-                        <h2 id="modal-titulo"></h2>
-                        <div class="modal-badges">
-                            <span id="modal-anio" class="mbadge"></span>
-                            <span id="modal-tipo" class="mbadge accent"></span>
-                            <span id="modal-eps-n" class="mbadge"></span>
-                        </div>
-                    </div>
-                    <button id="modal-fav" class="btn-fav" onclick="toggleFavModal()">♡ Favorito</button>
-                </div>
-                <p id="modal-desc"></p>
-                <div id="zona-eps" class="hidden">
-                    <div class="eps-lbl">EPISODIOS</div>
-                    <div id="lista-eps"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- ═══════════ ADMIN OVERLAY ═══════════ -->
 <div id="admin-overlay" class="hidden" onclick="if(event.target===this)cerrarAdmin()">
@@ -224,3 +202,4 @@ fetch('script.js').then(r => r.text()).then(t => {
 </script>
 </body>
 </html>
+
