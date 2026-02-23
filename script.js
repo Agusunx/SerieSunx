@@ -66,7 +66,7 @@ const BIBLIOTECA = [
             { nombre: "Cap 32: Selección", url: "https://www.yourupload.com/embed/gb8eAR3uIKPl" },
             { nombre: "Cap 33: Desprecio", url: "https://www.yourupload.com/embed/quhayLyvj5cY" },
             { nombre: "Cap 34: Vigilancia", url: "https://www.yourupload.com/embed/CriOcv8U2E8O" },
-            { nombre: "Cap 35: Intento", url: "https://www.yourupload.com/embed/B6Q68hdo7CU0" },
+            { nombre: "Cap 35: Intento", url: "https://www.yourupload.com/embed/pUeEpB38sxXa" },
             { nombre: "Cap 36: 28 de enero", url: "https://www.yourupload.com/embed/pUeEpB38sxXa" },
             { nombre: "Cap 37: Nuevo Mundo", url: "https://www.yourupload.com/embed/n50l3d7H507i" }
         ]
@@ -86,12 +86,12 @@ const BIBLIOTECA = [
             { nombre: "Capítulo 5", url: "https://www.yourupload.com/embed/HwjR6AP8TSAh" },
             { nombre: "Capítulo 6", url: "https://mega.nz/embed/9DMjzQhB#WzKpvkOabugPzWKZ_wlmCHqW1ZvRkMda1qNXmAZto7I" },
             { nombre: "Capítulo 7", url: "https://mega.nz/embed/wL9GiLbC#UeOrzdhOlP_MISBs1AAhrW5VDghY1hRMrUkM9aLodaU" },
-            { nombre: "Capítulo 8", url: "https://mega.nz/file/lWtkQZoC#nid2Jm_Ny60Cfwk_kFS-ZxkfLklO-wGtC3BB5dUZGbg" },
-            { nombre: "Capítulo 9", url: "https://mega.nz/file/gX1kRRRR#DKXILlVuayprrfbi5L5V6DJrXeB-VIsvAbSp1zKTT9I" },
-            { nombre: "Capítulo 10", url: "https://mega.nz/file/EblmWIJA#0F68U0jH1U4iZQtv-KVu9rlNMWZjugM1p8GAaxwMYhY" },
-            { nombre: "Capítulo 11", url: "https://mega.nz/file/JDFQwCRA#joEYHBT6_g1GESpc14wwoeOyqAxiYhkc53hgIIKDgFo" },
-            { nombre: "Capítulo 12", url: "https://mega.nz/file/Qlpk3SZS#FsJ3vWF_gEUxqtA1WZkKIpPoSIcFz8O6ot8SuLOrxLo" },
-            { nombre: "Capítulo 13", url: "https://mega.nz/file/Ehp0DYzA#EbQZV60QAkv6MPA_pzkKzyBiCVGP6J2Sw2x51EYYtgw" }
+            { nombre: "Capítulo 8", url: "https://mega.nz/embed/lWtkQZoC#nid2Jm_Ny60Cfwk_kFS-ZxkfLklO-wGtC3BB5dUZGbg" },
+            { nombre: "Capítulo 9", url: "https://mega.nz/embed/gX1kRRRR#DKXILlVuayprrfbi5L5V6DJrXeB-VIsvAbSp1zKTT9I" },
+            { nombre: "Capítulo 10", url: "https://mega.nz/embed/EblmWIJA#0F68U0jH1U4iZQtv-KVu9rlNMWZjugM1p8GAaxwMYhY" },
+            { nombre: "Capítulo 11", url: "https://mega.nz/embed/JDFQwCRA#joEYHBT6_g1GESpc14wwoeOyqAxiYhkc53hgIIKDgFo" },
+            { nombre: "Capítulo 12", url: "https://mega.nz/embed/Qlpk3SZS#FsJ3vWF_gEUxqtA1WZkKIpPoSIcFz8O6ot8SuLOrxLo" },
+            { nombre: "Capítulo 13", url: "https://mega.nz/embed/Ehp0DYzA#EbQZV60QAkv6MPA_pzkKzyBiCVGP6J2Sw2x51EYYtgw" }
         ]
     },
     {
@@ -341,12 +341,14 @@ function abrirModal(item) {
     document.getElementById('modal-eps-n').textContent = item.esSerie ? `${item.episodios?.length || 0} episodios` : '';
     document.getElementById('modal-backdrop').style.backgroundImage = item.imagen ? `url('${item.imagen}')` : 'none';
     actualizarBtnFav();
-    limpiarPlayer();
+    
+    limpiarPlayer(item);
+
     if (item.esSerie) {
         document.getElementById('zona-eps').classList.remove('hidden');
         renderEps(item);
         const p = S.get('sx_prog', {})[item.titulo];
-        if (p) setTimeout(() => { const btn = document.querySelectorAll('.ep-btn')[p.epIdx]; if (btn) btn.click(); }, 80);
+        if (p) setTimeout(() => { const btn = document.querySelectorAll('.ep-btn')[p.epIdx]; if (btn) btn.click(); }, 150);
     } else {
         document.getElementById('zona-eps').classList.add('hidden');
         reproducir(item.url);
@@ -424,18 +426,12 @@ function limpiarPlayer(item = null) {
     }
     
     if (item && item.esSerie) {
-        ph.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('${item.imagen}')`;
-        ph.innerHTML = `
-            <div class="ph-content" style="text-align:center">
-                <div style="font-size:3rem; margin-bottom:15px; filter: drop-shadow(0 0 10px var(--accent))">📺</div>
-                <div style="font-weight:600; letter-spacing:2px; color:#fff; text-transform:uppercase; font-size:0.8rem; opacity:0.9">
-                    Seleccioná un episodio para comenzar
-                </div>
-            </div>`;
+        ph.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('${item.imagen}')`;
+        ph.innerHTML = '<div style="text-align:center"><span style="font-size:3rem;display:block;margin-bottom:10px;opacity:0.6">📺</span><span style="font-weight:600;letter-spacing:1px;color:#fff;text-transform:uppercase;font-size:0.9rem">Seleccioná un episodio para comenzar</span></div>';
         ph.style.display = 'flex';
     } else {
         ph.style.backgroundImage = 'none';
-        ph.innerHTML = '<div class="ph-content" style="font-size:3.5rem; opacity:0.2; filter: grayscale(1)">▶</div>';
+        ph.innerHTML = '<span style="font-size:3rem;opacity:0.12">▶</span>';
         ph.style.display = 'flex';
     }
 }
@@ -448,7 +444,7 @@ function toast(msg) {
 }
 
 /* ══════════════════════════════════════════
-   ADMIN PANEL (integrado en index)
+   ADMIN PANEL 
 ══════════════════════════════════════════ */
 const ADMIN_USER = 'agusunx';
 const ADMIN_PASS = '1234';
@@ -595,7 +591,6 @@ function adminDescargar() {
     const extras = S.get('sx_extras', []);
     if (!extras.length) { toast('No hay extras para descargar'); return; }
 
-    // Rebuild script with injected extras
     const SCRIPT_TEXT = document.getElementById('script-base-data').textContent;
     const lines = extras.map(item => {
         const L = ['    {'];
@@ -623,4 +618,3 @@ function adminDescargar() {
     a.href = URL.createObjectURL(blob); a.download = 'script.js'; a.click();
     toast('✓ script.js descargado — reemplazalo en tu carpeta / GitHub');
 }
-
