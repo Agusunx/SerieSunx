@@ -1,4 +1,6 @@
 const HERO_INTERVAL = 5000;
+const ADMIN_USER = 'agusunx';
+const ADMIN_PASS = '1234';
 
 const BIBLIOTECA = [
     {
@@ -95,28 +97,6 @@ const BIBLIOTECA = [
         ]
     },
     {
-        titulo: "Romantic Killer",
-        tipo: "anime",
-        desc: "Anzu Hoshino disfruta de su soltería hasta que un ser mágico aparece para convertir su vida en un cliché de comedia romántica.",
-        anio: "2022",
-        imagen: "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABf8Zu33riJQI2nwjNEv7O5bYfKTTBuDuPTbCv4-u6I8xhTk4qDM1XeocgHSth903-nBiPnKTwOlj5kLRZuzuSjFdWzM6o1Z2sUti.jpg",
-        esSerie: true,
-        episodios: [
-            { nombre: "Capítulo 1", url: "https://mega.nz/embed/sb8F1bAZ#ashOuZV9nO4udFa_ghlsaVK8rEWlIwe8Ima6CuM_y0E" },
-            { nombre: "Capítulo 2", url: "https://mega.nz/embed/xaEDSJ7Z#DyVIQyQAzDXRMwOJpPouRJfPkYUJiKqlB1mManv4csQ" },
-            { nombre: "Capítulo 3", url: "https://mega.nz/embed/sCNBCBKJ#1yOU3UxCAqq_k60WeI37GFhrco-5eKm2LvM2h7Od1t" },
-            { nombre: "Capítulo 4", url: "https://mega.nz/embed/dGFg2RYZ#YKWcaTUgs3uN1xkxkISfJcICkbWDJcTYoAT--87dItg" },
-            { nombre: "Capítulo 5", url: "https://mega.nz/embed/ELUjwDhS#QlC4nd1KJ9PxfGbHPbqiW8yYpAS9zBq4UF8kI9Eqlso" },
-            { nombre: "Capítulo 6", url: "https://mega.nz/embed/pa8ikbyL#lJDPtKT6uL79MVPhj6QIfAVqtO1p_KAb-bkX-jcI41s" },
-            { nombre: "Capítulo 7", url: "https://mega.nz/embed/4CkzjZIQ#QXdiwRQfeBxc9afW89PX9kMivBCdNcsIvUetxuZ90vs" },
-            { nombre: "Capítulo 8", url: "https://mega.nz/embed/8H9iwZ7a#6fMqlids2Y2mKiyIYV_ARflfq0smEwpP4Arct0765zg" },
-            { nombre: "Capítulo 9", url: "https://mega.nz/embed/FLU1XK7Z#Zniy74UfAAd0s1xnyJbJ0BVeTjUKxQUnDqkcnxkMKfA" },
-            { nombre: "Capítulo 10", url: "https://mega.nz/embed/IGF11LAD#AEPQUKEgxzC2NmKYigZ67p10FOIxwzYbqEAZwsdWsXM" },
-            { nombre: "Capítulo 11", url: "https://mega.nz/embed/5XcCmDzT#IgqMpzCzueHoE2cvDwKVGuOMjkcWL92DGzQxRuaSvxE" },
-            { nombre: "Capítulo 12", url: "https://mega.nz/embed/ZT93lKbA#2rbFS8zF_fp3PnZS5qIQefqE1654vVHpI1EkRdtL_0o" }
-        ]
-    },
-    {
         titulo: "Red Social",
         tipo: "pelicula",
         desc: "Mark Zuckerberg crea Facebook y cambia el mundo, pero pierde a sus únicos amigos en el proceso.",
@@ -170,7 +150,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
     });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') { cerrarModal(); cerrarAdmin(); } });
+    document.addEventListener('keydown', e => { 
+        if (e.key === 'Escape') { cerrarModal(); cerrarAdmin(); } 
+    });
 });
 
 /* ─── TABS ─── */
@@ -428,9 +410,9 @@ function limpiarPlayer(item = null) {
         ph.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${item.imagen}')`;
         ph.innerHTML = `
             <div class="ph-content">
-                <span style="font-size:3.5rem;display:block;margin-bottom:15px;filter:drop-shadow(0 0 10px var(--accent))">▶</span>
+                <span style="font-size:3.5rem;display:block;margin-bottom:15px;filter:drop-shadow(0 0 10px #e8004c)">▶</span>
                 <span style="font-weight:700;letter-spacing:2px;color:#fff;text-transform:uppercase;font-size:1rem;display:block">Seleccioná un episodio</span>
-                <span style="color:var(--muted);font-size:0.8rem;margin-top:5px;display:block">${item.titulo} está lista para ver</span>
+                <span style="color:#6b6b7e;font-size:0.8rem;margin-top:5px;display:block">${item.titulo} está lista para ver</span>
             </div>`;
         ph.style.display = 'flex';
     } else {
@@ -450,9 +432,6 @@ function toast(msg) {
 /* ══════════════════════════════════════════
    ADMIN PANEL 
 ══════════════════════════════════════════ */
-const ADMIN_USER = 'agusunx';
-const ADMIN_PASS = '1234';
-
 function abrirAdmin() {
     document.getElementById('admin-overlay').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
@@ -484,7 +463,6 @@ function adminLogin() {
 function adminSetTipo(tipo, btn) {
     document.querySelectorAll('.atipo-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    btn.dataset.tipo = tipo;
     document.getElementById('admin-sec-peli').style.display = tipo === 'pelicula' ? 'block' : 'none';
     document.getElementById('admin-sec-serie').style.display = tipo !== 'pelicula' ? 'block' : 'none';
     document.getElementById('admin-tipo-val').value = tipo;
