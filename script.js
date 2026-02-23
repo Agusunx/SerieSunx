@@ -1,6 +1,4 @@
 const HERO_INTERVAL = 5000;
-const ADMIN_USER = 'agusunx';
-const ADMIN_PASS = '1234';
 
 const BIBLIOTECA = [
     {
@@ -88,13 +86,53 @@ const BIBLIOTECA = [
             { nombre: "Capítulo 5", url: "https://www.yourupload.com/embed/HwjR6AP8TSAh" },
             { nombre: "Capítulo 6", url: "https://mega.nz/embed/9DMjzQhB#WzKpvkOabugPzWKZ_wlmCHqW1ZvRkMda1qNXmAZto7I" },
             { nombre: "Capítulo 7", url: "https://mega.nz/embed/wL9GiLbC#UeOrzdhOlP_MISBs1AAhrW5VDghY1hRMrUkM9aLodaU" },
-            { nombre: "Capítulo 8", url: "https://mega.nz/embed/lWtkQZoC#nid2Jm_Ny60Cfwk_kFS-ZxkfLklO-wGtC3BB5dUZGbg" },
-            { nombre: "Capítulo 9", url: "https://mega.nz/embed/gX1kRRRR#DKXILlVuayprrfbi5L5V6DJrXeB-VIsvAbSp1zKTT9I" },
-            { nombre: "Capítulo 10", url: "https://mega.nz/embed/EblmWIJA#0F68U0jH1U4iZQtv-KVu9rlNMWZjugM1p8GAaxwMYhY" },
-            { nombre: "Capítulo 11", url: "https://mega.nz/embed/JDFQwCRA#joEYHBT6_g1GESpc14wwoeOyqAxiYhkc53hgIIKDgFo" },
-            { nombre: "Capítulo 12", url: "https://mega.nz/embed/Qlpk3SZS#FsJ3vWF_gEUxqtA1WZkKIpPoSIcFz8O6ot8SuLOrxLo" },
-            { nombre: "Capítulo 13", url: "https://mega.nz/embed/Ehp0DYzA#EbQZV60QAkv6MPA_pzkKzyBiCVGP6J2Sw2x51EYYtgw" }
+            { nombre: "Capítulo 8", url: "https://mega.nz/file/lWtkQZoC#nid2Jm_Ny60Cfwk_kFS-ZxkfLklO-wGtC3BB5dUZGbg" },
+            { nombre: "Capítulo 9", url: "https://mega.nz/file/gX1kRRRR#DKXILlVuayprrfbi5L5V6DJrXeB-VIsvAbSp1zKTT9I" },
+            { nombre: "Capítulo 10", url: "https://mega.nz/file/EblmWIJA#0F68U0jH1U4iZQtv-KVu9rlNMWZjugM1p8GAaxwMYhY" },
+            { nombre: "Capítulo 11", url: "https://mega.nz/file/JDFQwCRA#joEYHBT6_g1GESpc14wwoeOyqAxiYhkc53hgIIKDgFo" },
+            { nombre: "Capítulo 12", url: "https://mega.nz/file/Qlpk3SZS#FsJ3vWF_gEUxqtA1WZkKIpPoSIcFz8O6ot8SuLOrxLo" },
+            { nombre: "Capítulo 13", url: "https://mega.nz/file/Ehp0DYzA#EbQZV60QAkv6MPA_pzkKzyBiCVGP6J2Sw2x51EYYtgw" }
         ]
+    },
+    {
+        titulo: "Romantic Killer",
+        tipo: "anime",
+        desc: "Anzu Hoshino disfruta de su soltería hasta que un ser mágico aparece para convertir su vida en un cliché de comedia romántica.",
+        anio: "2022",
+        imagen: "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABf8Zu33riJQI2nwjNEv7O5bYfKTTBuDuPTbCv4-u6I8xhTk4qDM1XeocgHSth903-nBiPnKTwOlj5kLRZuzuSjFdWzM6o1Z2sUti.jpg",
+        esSerie: true,
+        episodios: [
+            { nombre: "Capítulo 1", url: "https://mega.nz/embed/sb8F1bAZ#ashOuZV9nO4udFa_ghlsaVK8rEWlIwe8Ima6CuM_y0E" },
+            { nombre: "Capítulo 2", url: "https://mega.nz/embed/xaEDSJ7Z#DyVIQyQAzDXRMwOJpPouRJfPkYUJiKqlB1mManv4csQ" },
+            { nombre: "Capítulo 3", url: "https://mega.nz/embed/sCNBCBKJ#1yOU3UxCAqq_k60WeI37GFhrco-5eKm2LvM2h7Od1t" },
+            { nombre: "Capítulo 4", url: "https://mega.nz/embed/dGFg2RYZ#YKWcaTUgs3uN1xkxkISfJcICkbWDJcTYoAT--87dItg" },
+            { nombre: "Capítulo 5", url: "https://mega.nz/embed/ELUjwDhS#QlC4nd1KJ9PxfGbHPbqiW8yYpAS9zBq4UF8kI9Eqlso" },
+            { nombre: "Capítulo 6", url: "https://mega.nz/embed/pa8ikbyL#lJDPtKT6uL79MVPhj6QIfAVqtO1p_KAb-bkX-jcI41s" },
+            { nombre: "Capítulo 7", url: "https://mega.nz/embed/4CkzjZIQ#QXdiwRQfeBxc9afW89PX9kMivBCdNcsIvUetxuZ90vs" },
+            { nombre: "Capítulo 8", url: "https://mega.nz/embed/8H9iwZ7a#6fMqlids2Y2mKiyIYV_ARflfq0smEwpP4Arct0765zg" },
+            { nombre: "Capítulo 9", url: "https://mega.nz/embed/FLU1XK7Z#Zniy74UfAAd0s1xnyJbJ0BVeTjUKxQUnDqkcnxkMKfA" },
+            { nombre: "Capítulo 10", url: "https://mega.nz/embed/IGF11LAD#AEPQUKEgxzC2NmKYigZ67p10FOIxwzYbqEAZwsdWsXM" },
+            { nombre: "Capítulo 11", url: "https://mega.nz/embed/5XcCmDzT#IgqMpzCzueHoE2cvDwKVGuOMjkcWL92DGzQxRuaSvxE" },
+            { nombre: "Capítulo 12", url: "https://mega.nz/embed/ZT93lKbA#2rbFS8zF_fp3PnZS5qIQefqE1654vVHpI1EkRdtL_0o" }
+        ]
+    },
+    {
+        titulo: "Red Social",
+        tipo: "pelicula",
+        desc: "Mark Zuckerberg crea Facebook y cambia el mundo, pero pierde a sus únicos amigos en el proceso.",
+        anio: "2010",
+        imagen: "https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/90016aaa-2f1d-40d8-b214-2de30bccc99a/08f7e552360f80efa0cd86d5f8b197e4e53d080f.jpg?host=wbd-images.prod-vod.h264.io&partner=beamcom",
+        esSerie: false,
+        url: "https://www.dropbox.com/scl/fi/ki8wkec3iy1eec8snyt97/RedSocial.mp4?rlkey=q0o5i78amtl70sdmsn9hgza2t&st=bwjp2q9v&raw=1"
+    },
+    {
+        titulo: "Piratas de Silicon Valley",
+        tipo: "pelicula",
+        desc: "La rivalidad épica entre Steve Jobs y Bill Gates que definió la era tecnológica moderna.",
+        anio: "1999",
+        imagen: "https://m.media-amazon.com/images/S/pv-target-images/94ef23ac98f01b92c32e69dc0bb675dc5e68dcfd4a899cd9d49c24c5f6a32690.png",
+        esSerie: false,
+        url: "https://www.dropbox.com/scl/fi/sw2sccrl5n8x3f9gt7scf/Silicon.mp4?rlkey=al95uv95jkg4mh7zm7ohd9mv7&st=gsy9sm1i&raw=1"
     },
     // __ADMIN_INJECT__
 ];
@@ -303,14 +341,12 @@ function abrirModal(item) {
     document.getElementById('modal-eps-n').textContent = item.esSerie ? `${item.episodios?.length || 0} episodios` : '';
     document.getElementById('modal-backdrop').style.backgroundImage = item.imagen ? `url('${item.imagen}')` : 'none';
     actualizarBtnFav();
-    
-    limpiarPlayer(item);
-
+    limpiarPlayer();
     if (item.esSerie) {
         document.getElementById('zona-eps').classList.remove('hidden');
         renderEps(item);
         const p = S.get('sx_prog', {})[item.titulo];
-        if (p) setTimeout(() => { const btn = document.querySelectorAll('.ep-btn')[p.epIdx]; if (btn) btn.click(); }, 150);
+        if (p) setTimeout(() => { const btn = document.querySelectorAll('.ep-btn')[p.epIdx]; if (btn) btn.click(); }, 80);
     } else {
         document.getElementById('zona-eps').classList.add('hidden');
         reproducir(item.url);
@@ -374,33 +410,19 @@ function reproducir(url) {
     }
 }
 
-function limpiarPlayer(item = null) {
+function limpiarPlayer() {
     const wrap = document.getElementById('player-wrap');
     const video = document.getElementById('reproductor');
     wrap.querySelectorAll('iframe').forEach(f => f.remove());
     if (video) { video.pause(); video.src = ''; video.classList.add('hidden'); }
-    
     let ph = wrap.querySelector('.player-ph');
     if (!ph) {
         ph = document.createElement('div'); ph.className = 'player-ph';
-        ph.style.cssText = 'width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#000;background-size:cover;background-position:center;position:relative;';
+        ph.innerHTML = '<span style="font-size:3rem;opacity:0.12">▶</span>';
+        ph.style.cssText = 'width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#000;';
         wrap.appendChild(ph);
     }
-    
-    if (item && item.esSerie) {
-        ph.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${item.imagen}')`;
-        ph.innerHTML = `
-            <div class="ph-content" style="background:rgba(0,0,0,0.65);backdrop-filter:blur(10px);padding:35px 55px;border-radius:50px;border:1px solid rgba(255,255,255,0.1);text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.5);">
-                <span style="font-size:3.5rem;display:block;margin-bottom:15px;filter:drop-shadow(0 0 10px #e8004c)">▶</span>
-                <span style="font-weight:700;letter-spacing:2px;color:#fff;text-transform:uppercase;font-size:1rem;display:block">Seleccioná un episodio</span>
-                <span style="color:#6b6b7e;font-size:0.8rem;margin-top:5px;display:block">${item.titulo} está lista para ver</span>
-            </div>`;
-        ph.style.display = 'flex';
-    } else {
-        ph.style.backgroundImage = 'none';
-        ph.innerHTML = '<span style="font-size:4rem;opacity:0.2">🎬</span>';
-        ph.style.display = 'flex';
-    }
+    ph.style.display = 'flex';
 }
 
 /* ─── TOAST ─── */
@@ -411,8 +433,11 @@ function toast(msg) {
 }
 
 /* ══════════════════════════════════════════
-   ADMIN PANEL 
+   ADMIN PANEL (integrado en index)
 ══════════════════════════════════════════ */
+const ADMIN_USER = 'agusunx';
+const ADMIN_PASS = '1234';
+
 function abrirAdmin() {
     document.getElementById('admin-overlay').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
@@ -444,6 +469,7 @@ function adminLogin() {
 function adminSetTipo(tipo, btn) {
     document.querySelectorAll('.atipo-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    btn.dataset.tipo = tipo;
     document.getElementById('admin-sec-peli').style.display = tipo === 'pelicula' ? 'block' : 'none';
     document.getElementById('admin-sec-serie').style.display = tipo !== 'pelicula' ? 'block' : 'none';
     document.getElementById('admin-tipo-val').value = tipo;
@@ -554,6 +580,7 @@ function adminDescargar() {
     const extras = S.get('sx_extras', []);
     if (!extras.length) { toast('No hay extras para descargar'); return; }
 
+    // Rebuild script with injected extras
     const SCRIPT_TEXT = document.getElementById('script-base-data').textContent;
     const lines = extras.map(item => {
         const L = ['    {'];
