@@ -68,7 +68,7 @@ const BIBLIOTECA = [
             { nombre: "Cap 32: Selección", url: "https://www.yourupload.com/embed/gb8eAR3uIKPl" },
             { nombre: "Cap 33: Desprecio", url: "https://www.yourupload.com/embed/quhayLyvj5cY" },
             { nombre: "Cap 34: Vigilancia", url: "https://www.yourupload.com/embed/CriOcv8U2E8O" },
-            { nombre: "Cap 35: Intento", url: "https://www.yourupload.com/embed/pUeEpB38sxXa" },
+            { nombre: "Cap 35: Intento", url: "https://www.yourupload.com/embed/B6Q68hdo7CU0" },
             { nombre: "Cap 36: 28 de enero", url: "https://www.yourupload.com/embed/pUeEpB38sxXa" },
             { nombre: "Cap 37: Nuevo Mundo", url: "https://www.yourupload.com/embed/n50l3d7H507i" }
         ]
@@ -95,24 +95,6 @@ const BIBLIOTECA = [
             { nombre: "Capítulo 12", url: "https://mega.nz/embed/Qlpk3SZS#FsJ3vWF_gEUxqtA1WZkKIpPoSIcFz8O6ot8SuLOrxLo" },
             { nombre: "Capítulo 13", url: "https://mega.nz/embed/Ehp0DYzA#EbQZV60QAkv6MPA_pzkKzyBiCVGP6J2Sw2x51EYYtgw" }
         ]
-    },
-    {
-        titulo: "Red Social",
-        tipo: "pelicula",
-        desc: "Mark Zuckerberg crea Facebook y cambia el mundo, pero pierde a sus únicos amigos en el proceso.",
-        anio: "2010",
-        imagen: "https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/90016aaa-2f1d-40d8-b214-2de30bccc99a/08f7e552360f80efa0cd86d5f8b197e4e53d080f.jpg?host=wbd-images.prod-vod.h264.io&partner=beamcom",
-        esSerie: false,
-        url: "https://www.dropbox.com/scl/fi/ki8wkec3iy1eec8snyt97/RedSocial.mp4?rlkey=q0o5i78amtl70sdmsn9hgza2t&st=bwjp2q9v&raw=1"
-    },
-    {
-        titulo: "Piratas de Silicon Valley",
-        tipo: "pelicula",
-        desc: "La rivalidad épica entre Steve Jobs y Bill Gates que definió la era tecnológica moderna.",
-        anio: "1999",
-        imagen: "https://m.media-amazon.com/images/S/pv-target-images/94ef23ac98f01b92c32e69dc0bb675dc5e68dcfd4a899cd9d49c24c5f6a32690.png",
-        esSerie: false,
-        url: "https://www.dropbox.com/scl/fi/sw2sccrl5n8x3f9gt7scf/Silicon.mp4?rlkey=al95uv95jkg4mh7zm7ohd9mv7&st=gsy9sm1i&raw=1"
     },
     // __ADMIN_INJECT__
 ];
@@ -150,9 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
     });
-    document.addEventListener('keydown', e => { 
-        if (e.key === 'Escape') { cerrarModal(); cerrarAdmin(); } 
-    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { cerrarModal(); cerrarAdmin(); } });
 });
 
 /* ─── TABS ─── */
@@ -403,13 +383,14 @@ function limpiarPlayer(item = null) {
     let ph = wrap.querySelector('.player-ph');
     if (!ph) {
         ph = document.createElement('div'); ph.className = 'player-ph';
+        ph.style.cssText = 'width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#000;background-size:cover;background-position:center;position:relative;';
         wrap.appendChild(ph);
     }
     
     if (item && item.esSerie) {
         ph.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${item.imagen}')`;
         ph.innerHTML = `
-            <div class="ph-content">
+            <div class="ph-content" style="background:rgba(0,0,0,0.65);backdrop-filter:blur(10px);padding:35px 55px;border-radius:50px;border:1px solid rgba(255,255,255,0.1);text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.5);">
                 <span style="font-size:3.5rem;display:block;margin-bottom:15px;filter:drop-shadow(0 0 10px #e8004c)">▶</span>
                 <span style="font-weight:700;letter-spacing:2px;color:#fff;text-transform:uppercase;font-size:1rem;display:block">Seleccioná un episodio</span>
                 <span style="color:#6b6b7e;font-size:0.8rem;margin-top:5px;display:block">${item.titulo} está lista para ver</span>
