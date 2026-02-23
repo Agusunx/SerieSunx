@@ -342,32 +342,16 @@ function abrirModal(item) {
     document.getElementById('modal-backdrop').style.backgroundImage = item.imagen ? `url('${item.imagen}')` : 'none';
     actualizarBtnFav();
     
-  function limpiarPlayer(item = null) {
-    const wrap = document.getElementById('player-wrap');
-    const video = document.getElementById('reproductor');
-    wrap.querySelectorAll('iframe').forEach(f => f.remove());
-    if (video) { video.pause(); video.src = ''; video.classList.add('hidden'); }
-    
-    let ph = wrap.querySelector('.player-ph');
-    if (!ph) {
-        ph = document.createElement('div'); ph.className = 'player-ph';
-        wrap.appendChild(ph);
-    }
-    
-    if (item && item.esSerie) {
-        // Fondo con blur del póster de la serie
-        ph.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${item.imagen}')`;
-        ph.innerHTML = `
-            <div class="ph-content">
-                <span style="font-size:3.5rem;display:block;margin-bottom:15px;filter:drop-shadow(0 0 10px var(--accent))">▶</span>
-                <span style="font-weight:700;letter-spacing:2px;color:#fff;text-transform:uppercase;font-size:1rem;display:block">Seleccioná un episodio</span>
-                <span style="color:var(--muted);font-size:0.8rem;margin-top:5px;display:block">${item.titulo} está lista para ver</span>
-            </div>`;
-        ph.style.display = 'flex';
+    limpiarPlayer(item);
+
+    if (item.esSerie) {
+        document.getElementById('zona-eps').classList.remove('hidden');
+        renderEps(item);
+        const p = S.get('sx_prog', {})[item.titulo];
+        if (p) setTimeout(() => { const btn = document.querySelectorAll('.ep-btn')[p.epIdx]; if (btn) btn.click(); }, 150);
     } else {
-        ph.style.backgroundImage = 'none';
-        ph.innerHTML = '<span style="font-size:4rem;opacity:0.2">🎬</span>';
-        ph.style.display = 'flex';
+        document.getElementById('zona-eps').classList.add('hidden');
+        reproducir(item.url);
     }
 }
 
@@ -437,17 +421,21 @@ function limpiarPlayer(item = null) {
     let ph = wrap.querySelector('.player-ph');
     if (!ph) {
         ph = document.createElement('div'); ph.className = 'player-ph';
-        ph.style.cssText = 'width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#000;background-size:cover;background-position:center;position:relative;';
         wrap.appendChild(ph);
     }
     
     if (item && item.esSerie) {
-        ph.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('${item.imagen}')`;
-        ph.innerHTML = '<div style="text-align:center"><span style="font-size:3rem;display:block;margin-bottom:10px;opacity:0.6">📺</span><span style="font-weight:600;letter-spacing:1px;color:#fff;text-transform:uppercase;font-size:0.9rem">Seleccioná un episodio para comenzar</span></div>';
+        ph.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${item.imagen}')`;
+        ph.innerHTML = `
+            <div class="ph-content">
+                <span style="font-size:3.5rem;display:block;margin-bottom:15px;filter:drop-shadow(0 0 10px var(--accent))">▶</span>
+                <span style="font-weight:700;letter-spacing:2px;color:#fff;text-transform:uppercase;font-size:1rem;display:block">Seleccioná un episodio</span>
+                <span style="color:var(--muted);font-size:0.8rem;margin-top:5px;display:block">${item.titulo} está lista para ver</span>
+            </div>`;
         ph.style.display = 'flex';
     } else {
         ph.style.backgroundImage = 'none';
-        ph.innerHTML = '<span style="font-size:3rem;opacity:0.12">▶</span>';
+        ph.innerHTML = '<span style="font-size:4rem;opacity:0.2">🎬</span>';
         ph.style.display = 'flex';
     }
 }
@@ -634,4 +622,3 @@ function adminDescargar() {
     a.href = URL.createObjectURL(blob); a.download = 'script.js'; a.click();
     toast('✓ script.js descargado — reemplazalo en tu carpeta / GitHub');
 }
-
